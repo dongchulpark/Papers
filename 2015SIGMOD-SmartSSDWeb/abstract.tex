@@ -1,0 +1,12 @@
+\begin{abstract}
+Recently, there is a renewed interest of \emph{In-Storage Computing} (ISC) in the context of solid state drives (SSDs), called ``Smart SSDs". Unlike the traditional CPU-centric computing systems, it enables ISC devices to play a major role in computation by offloading key functions of host systems into ISC devices, to take the advantage of the high internal bandwidth, low I/O latency and computing capabilities.
+It is challenging to determine what functions to be executed in the ISC devices. Existing works studied the query offloading in database systems to ISC devices.
+
+This work explores how to apply Smart SSD to web search engine area, the first work in this area.
+The major research issue is to determine what query processing steps in web search engines that could be cost-effectively answered by Smart SSD.
+To answer this question, we identify five commonly used operations in web search engines that could be potentially benefit from Smart SSD: \textsf{intersection}, \textsf{ranked intersection}, \textsf{ranked union}, \textsf{difference}, and \textsf{ranked difference} and discuss the opportunities of the query offloading.
+We closely work with an SSD vendor to implement these operations to Smart SSD.
+We also integrate Smart SSD with an open-source search engine -- Apache Lucene.
+Finally, we conduct extensive experiments to evaluate the performance and tradeoffs by using both synthetic datasets and real datasets (provided by a commercial large-scale search engine company). The experimental results show that, Smart SSD can generally reduce the query latency by a factor of 2-3$\times$ and energy consumption by 8-10$\times$.
+
+\end{abstract} 

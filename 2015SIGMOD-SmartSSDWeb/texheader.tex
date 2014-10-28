@@ -1,0 +1,64 @@
+\documentclass[letterpaper]{sig-alternate}%sig-alternate-2013 sig-alt-full
+
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\makeatother \makeatletter
+\newif\if@restonecol
+\makeatother
+\let\algorithm\relax
+\let\endalgorithm\relax
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+\usepackage{graphicx}
+\usepackage{color}
+
+
+\usepackage{url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds} % For url breaks
+\makeatother
+
+
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{enumerate}
+%\usepackage{multirow}%
+%\usepackage{boxedminipage}
+%\usepackage{subfigure}
+\usepackage{balance}
+\usepackage{verbatim}
+\usepackage{lscape}
+\usepackage{float}
+%\usepackage{CJK}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{framed}
+\usepackage{epstopdf}
+\usepackage{times}
+%\usepackage[pdftex, colorlinks=true, citecolor=blue, linkcolor=blue]{hyperref}
+
+%\usepackage{ctex}
+\usepackage{comment}
+\usepackage{pifont}
+
+\usepackage{ifpdf}
+\ifpdf
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+\else
+\fi
+
+
+%\usepackage[labelfont=bf]{caption}
+
+
+
+%\newcommand{\stitle}[1]{\vspace*{0.5em}\noindent{\bf #1\/}}
+\newcommand{\stitle}[1]{\noindent{\bf #1\/}}
+\newcommand{\ntitle}[1]{\noindent{\bf #1\/}}
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+
+
+\pagestyle{plain}
+\begin{document} 

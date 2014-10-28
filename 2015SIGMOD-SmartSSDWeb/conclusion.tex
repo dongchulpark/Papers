@@ -1,0 +1,11 @@
+\section{Conclusion}\label{sec:conclusion}
+
+To do (write conclusion after everything is fixed)...... Make a summary on findings, conclusive results (e.g., what operations can be offloaded). Also some improvements observed to do on Smart SSD side, e.g., memory copy, DMA copy. Call for a co-design and algorithmic optimizations.
+
+\textbf{Future work.}
+This is the first work of applying Smart SSD to web search engine area. We have a number of interesting future works to do.
+
+\emph{Smart SSD on document server side}. This work only consider to use Smart SSD at index servers (see Figure \ref{fig:SSDInternals}). However, it is still interesting to speedup query processing in document servers. The output snippet is typically more than 10X smaller than the original document \cite{Markatos01,Turpin2007FGR}. Thus, offloading query steps in document server can also save a lot of I/O bandwidth. However, the existing snippet generation algorithms are computational intensive \cite{Wang2013ISS}, which may not make Smart SSD shine. Thus, it is interesting to develop a more efficient algorithm specially for Smart SSD.
+
+\emph{Smart SSD for building inverted index}. Building inverted index may be another task that can benefit a lot from Smart SSD. (1) On one hand, it is very I/O-intensive.
+  There are a lot of data transfer, at least twice: scan the whole documents once, build index in memory, write back to SSD. However, it could save a lot of host I/O interface bandwidth if we run the process inside Smart SSD, to leverage the high internal bandwidth and low latency I/O. (2) On the other hand, it does not require much CPU computation, which is also suitable for Smart SSD.

@@ -1,0 +1,57 @@
+
+\newcommand{\mm}{mm$^2$}
+\newcommand{\figtitle}[1]{\textbf{#1.}}
+\newcommand{\us}[1]{$\mu$s}
+\newcommand{\fixme}[1]{{\color{red}\textbf{#1}}}
+
+\definecolor{pink}{rgb}{1.0,0.47,0.6}
+\definecolor{orange}{rgb}{1.0,0.5,0.0}
+\definecolor{cyanish}{rgb}{0,0.8,1.0}
+\newcommand{\adrian}[1]{{\color{green}\textbf{#1}}}
+\newcommand{\laura}[1]{{\color{pink}\textbf{#1}}}
+\newcommand{\joel}[1]{{\color{red}\textbf{#1}}}
+\newcommand{\ameen}[1]{{\color{blue}\textbf{#1}}}
+\newcommand{\arup}[1]{{\color{yellow}\textbf{#1}}}
+\newcommand{\hungwei}[1]{{\color{purple}\textbf{#1}}}
+\newcommand{\trevor}[1]{{\color{cyanish}\textbf{#1}}}
+
+\newcommand{\note}[2]{\fixme{$\ll$ #1 $\gg$ #2}}
+
+\newcommand{\myitem}[1]{\item \textbf{#1}}
+
+\newcommand{\mycommand}[1]{\texttt{#1}}
+\newcommand{\LogWrite}[1]{\mycommand{LogWrite}}
+\newcommand{\Commit}[1]{\mycommand{Commit}}
+\newcommand{\NestedTopAction}[1]{\mycommand{NestedTopAction}}
+\newcommand{\Abort}[1]{\mycommand{Abort}}
+\newcommand{\PartialAbort}[1]{\mycommand{PartialAbort}}
+\newcommand{\WriteBack}[1]{\mycommand{WriteBack}}
+\newcommand{\AtomicWrite}[1]{\mycommand{AtomicWrite}}
+\newcommand{\ShortAtomicWrite}[1]{\mycommand{ShortAtomicWrite}}
+
+\newcommand{\mystate}[1]{\textsc{#1}}
+\newcommand{\Free}[1]{\mystate{Free}}
+\newcommand{\Pending}[1]{\mystate{Pending}}
+\newcommand{\Committed}[1]{\mystate{Committed}}
+
+%\newcommand{\ERL}[1]{ERL}
+\newcommand{\ERLAW}[1]{EAW}
+\newcommand{\ERLAWs}[1]{EAWs}
+\newcommand{\ERLAWsFull}[1]{editable atomic writes (EAW)}
+\newcommand{\ERLAWsSec}[1]{Editable atomic writes}
+
+
+
+\newcommand{\Valid}[1]{\mystate{Valid}}
+\newcommand{\Marked}[1]{\mystate{Marked}}
+
+% Added for title
+\newfont{\autfnt}{phvr8t at 11pt}
+\newfont{\affaddr}{phvr8t at 10pt}
+\newfont{\eaddfnt}{phvr8t at 10pt}
+\newdimen\auwidth
+\auwidth=\textwidth
+\def\email#1{{{\eaddfnt{\par #1}}}}
+\def\alignauthor{%                  % \begin{tabular}
+\end{tabular}%
+  \begin{tabular}[t]{p{\auwidth}}\centering}%
