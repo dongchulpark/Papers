@@ -1,51 +1,70 @@
 
-\section{System Co-Design: Smart SSD for Web Search Engine}\label{sec:design}
-In this section, we discuss the query offloading in web search engine to Smart SSD.
-We first explore the design space in Section~\ref{sec:designSpace} to determine what query processing logic could be cost-effectively offloaded,
-then show the design architecture of search engine and Smart SSD in Section~\ref{sec:sysArch}.
+\section{System Co-Design: Smart SSD for Lucene}\label{sec:design}
+This section describes the system co-design of the Smart SSD and Lucene.
+We first explore the design space in Section~\ref{sec:designSpace} to determine what query processing logic could be cost-effectively offloaded, and then show the co-design architecture of the Smart SSD and Lucene in Section~\ref{sec:sysArch}.
 
 \subsection{Design Space}\label{sec:designSpace}
 
-The overall research question of the design: \emph{which query processing logic should be executed inside SSD?} We need to understand the advantages and disadvantages of Smart SSD (summarized in Table~\ref{tab:SmartSSDProCon}).
+The overall research question of the co-design is, \emph{what query processing logic could be cost-effectively executed by Smart SSDs?} To answer this, we need to understand the opportunities and limitations of Smart SSDs. %(summarized in Table~\ref{tab:SmartSSDProCon}).
 
-\textbf{Advantages of Smart SSD}. I/O operation in Smart SSD is very fast, because (1) high internal bandwidth, e.g., 5-10$\times$ faster than the host I/O interface~\cite{Do2013QPS,De2013}. The gap is predicated to increase in the future. (2) low I/O latency, because a regular I/O operation needs to go through the conventional thick OS stack, e.g., file system, interrupt, context switch between kernel space and user space, which is collectively called OS software overhead. The software overhead is negligible on hard disks (as I/O is very slow). However, it takes a considerable fraction of time on fast SSDs~\cite{Caulfield2010}\footnote{Some work in computer architecture area propose to bypass OS to better utilize fast SSDs~\cite{Caulfield2010}.}. Thus, it is very suitable to execute \emph{I/O-intensive} operations inside SSD to leverage the high internal bandwidth and low latency.
+\textbf{Opportunities of Smart SSDs}. Executing I/O operations inside Smart SSDs is very fast for the following two reasons. (1) SSDs generally provide 5-10$\times$ higher internal bandwidth than the host I/O interface bandwidth~\cite{Do2013QPS,De2013}. This gap is predicated to increase in the future. (2) The I/O latency is very short. A regular I/O operation (from flash chips to the host DRAM) needs to go through the conventional thick OS stack--a file system, interrupt, context switch between the kernel space and the user space--which is collectively called OS software overhead. This OS software overhead becomes a crucial factor in SSDs due to their fast I/O (but it can be negligible in HDDs as their slow I/O is a dominant factor)~\cite{Caulfield2010}. On the other hand, an I/O operation inside SSDs (from flash chips to the DRAM inside SSD) is free from the OS software overhead. Thus, it is very profitable to execute \emph{I/O-intensive} operations inside SSDs to leverage their high internal bandwidth and low latency. %Smart SSDs can reduce the I/O time significantly.
 
-\textbf{Disadvantages of Smart SSD}. Currently, our Smart SSD prototype suffers from two aspects. (1) Smart SSD embraces low-frequency processors (typically ARM series) to save energy. Thus, processing capability is several times lower compared to host CPUs (e.g., Intel processor)~\cite{Do2013QPS,De2013}; (2) Smart SSD also has a DRAM inside (called device DRAM), access to device DRAM is slower than to host DRAM. Because there is no instruction- and data-cache inside the embedded processor, and also device memory channels are not shared meaning that only one channel is active at one time. Thus, it is not suitable to execute \emph{CPU-intensive} and \emph{memory-intensive} operations inside SSD.
+\textbf{Limitations of Smart SSDs}. Smart SSDs also have some limitations. (1) Generally, Smart SSDs employ low-frequency processors (typically ARM series) to save energy and manufacturing cost. Thus, computing capability is several times lower than host CPUs (e.g., Intel processor)~\cite{Do2013QPS,De2013}; (2) The Smart SSD also has a DRAM inside. Accessing the device DRAM is slower than the host DRAM because typical SSD controllers do not adopt caches (e.g., L1/L2 caches). Thus, it is not desirable to execute \emph{CPU-intensive} and \emph{memory-intensive} operations inside SSDs. %That means, Smart SSDs will increase the CPU time.
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{l|l}\hline\hline
-\textbf{Pros}    & \textbf{Cons}\\\hline
-P1. High internal bandwidth & C1. CPU is slow \\\hline
-P2. Low I/O latency & C2. DRAM access is slow\\\hline\hline
-\end{tabular}
-\caption{Pros and cons of Smart SSD}\label{tab:SmartSSDProCon}
-\end{table}
+In short, Smart SSDs can reduce the I/O time at the expense of the increasing CPU time. Therefore, we can advise that a system with I/O time bottleneck can notably benefit from Smart SSDs. As an example, the Lucene system running on regular SSD has an I/O time bottleneck. Please see Figure~\ref{fig:timeBreakDownRegularSSD} (refer to Section~\ref{sec:expResults} for more experimental settings). We observe the I/O time of a particular query is 54.8 ms while its CPU time is 8 ms. Thus, offloading this query to Smart SSDs can significantly reduce the I/O time. Figure~\ref{fig:timeBreakDownRegSmart} in Section~\ref{sec:expResults} supports this claim.  It shows that, for the same query, if we offload step S3 and S4 to Smart SSDs, the I/O time reduces to 14.5 ms while the CPU time increases to 16.6 ms. Overall, Smart SSDs can reduce the total time by a factor of 2.
 
-However, on SSD-based web search engines, I/O is still the bottleneck. Based on our measurement, around 85\% of the time is spent on loading inverted lists from SSD, where Smart SSD shines.
+%Hence, for any system that could potentially benefit from Smart SSDs, should be bottlenecked on the I/O time (if executed on regular SSDs). Otherwise, Smart SSDs could not reduce the query latency.
 
-Understanding this, we set to consider what query processing steps, i.e., step X1 -- X5 in Figure~\ref{fig:searchEngineArch}, could be cost-effectively executed inside SSD. We do a rough analysis first, and evaluate them thoroughly in the experiments.
 
-\textbf{Step X1: parse query}. Parsing a query involves a number of CPU-intensive steps, e.g., tokenization, stemming and lemmatization~\cite{M08}. Thus, it is not cost-effectively to be offloaded to SSD.
+%However, for Lucene system running on regular SSD, the I/O time is still a bottleneck, see Figure~\ref{fig:timeBreakDownRegularSSD} (refer to Section~\ref{sec:expResults} for more experimental settings). We see that, the I/O time is 54.8 ms while the CPU time is 8 ms. Thus, offloading queries to Smart SSDs can reduce the I/O time significantly. In Section~\ref{sec:expResults} (Figure~\ref{fig:timeBreakDownRegSmart}), we show that, for the same query on Smart SSDs, if we offload step S3 and S4 to Smart SSDs, the I/O time can be reduce to 14.5 ms while the CPU time is increased to 16.6 ms. Thus, Smart SSDs can reduce the total time by a factor of 2.
 
-\textbf{Step X2: get metadata}. The metadata is a key-value pair. The key is a term $t$, the value is the basic information about the on-disk inverted list $\ell$ of $t$, typically offset, length (in bytes), document frequency. The metadata can be obtained from a dictionary file, which is small enough to fit into host memory. Even if not, it takes very few (usually 1 $\sim$ 2) I/O operations if a Btree-like data structure is built for the dictionary table~\cite{M08}. Thus, we do not offload this step.
+\begin{figure}[htbp]
+%\vspace{-5mm}
+	\centering
+		\includegraphics[width=0.8\columnwidth]{figures/timeBreakDownRegularSSD.pdf}
+	\caption{\small Time breakdown of executing a particular real query by Lucene system running on regular SSDs}
+	\label{fig:timeBreakDownRegularSSD}
+\end{figure}
 
-\textbf{Step X3: get inverted lists}. Each inverted list $\ell$ contains a list of documents that contain the same term $t$.
-Typically, all the inverted lists (i.e., of all terms) are too large enough to fit into host memory~\cite{BaezaYates07ICDE,Zhang2008,Risvik2013}, thus, we take a pessimistic way to assume that the inverted lists are stored on SSD.
-Reading inverted lists from disk to host memory requires many I/Os, taking around 85\% of the time based on our measurements. Thus, we offload this step to SSD to take the advantage of high internal bandwidth and low latency (see Table~\ref{tab:SmartSSDProCon}).
 
-\textbf{Step X4: execute list operations}. The goal of loading inverted lists to host DRAM is for executing list operations, e.g., intersection. Thus, step X4 and X3 should be paired to be offloaded. Then, the question is to determine what operation(s) could be benefit from Smart SSD. The basic operators include: list \textsf{intersection}, \textsf{union} and \textsf{difference}~\cite{M08}, which are frequently used in many commercial search engines (e.g., Google advanced search\footnote{\url{http://www.google.com/advanced_search}}). We investigate each operation in the following, a simple principle is the output should be much smaller than the input; otherwise, could not save any data movement. Let $A$ and $B$ be two inverted lists (assume $A$ is shorter than $B$ to capture the real case of skewed lists).
+
+
+%\begin{table}[htbp]
+%\centering\small
+%\begin{tabular}{l|l}\hline\hline
+%\textbf{Opportunities}    & \textbf{Limitations}\\\hline
+%P1. High internal bandwidth & C1. CPU is slow \\\hline
+%P2. Low I/O latency & C2. DRAM access is slow\\\hline\hline
+%\end{tabular}
+%\caption{Pros and cons of Smart SSD}\label{tab:SmartSSDProCon}
+%\end{table}
+
+
+
+Based on this observation, we next analyze what query processing steps (namely, step S1 -- S5 in Figure~\ref{fig:searchEngineArch}) for Lucene running on regular SSDs, could be cost-effectively executed inside SSDs. We make a rough analysis first, and elaborately evaluate them by experiments.
+
+\textbf{Step S1: Parse query}. Parsing a query involves a number of CPU-intensive steps, e.g., tokenization, stemming and lemmatization~\cite{M08}. Thus, it is not profitable to offload this step S1 to Smart SSDs.
+
+\textbf{Step S2: Get metadata}. The metadata is essentially a key-value pair. The key represents a query term, and the value corresponds to the basic information about the on-disk inverted list of the term.  Lucene contains (1) the offset where the list is stored on disk, (2) the length (in bytes) of the list, and (3) the number of entries in the list. The metadata is stored in a dictionary file (\texttt{.tis} file). There is a Btree-like data structure (\texttt{.tii} file) built for the dictionary file. Since it takes very few (usually 1 $\sim$ 2) I/O operations to obtain the metadata~\cite{M08}, we do not offload this step.
+
+\textbf{Step S3: Get inverted lists}. Each inverted list contains a list of documents containing the same term.
+Since, by default, Lucene stores all the inverted lists on a disk, upon receiving a query, it reads the inverted lists from the disk to a host memory, which is I/O-intensive.
+As is shown in Figure~\ref{fig:timeBreakDownRegularSSD}, the step S3 takes 87\% of the time if Lucene runs on regular SSDs. Therefore, it is desirable to offload this step to Smart SSDs.
+
+\textbf{Step S4: Execute list operations}. The main reason of loading inverted lists to the host memory is to efficiently execute list operations such as intersection. Thus, both step S4 and S3 should be offloaded to Smart SSDs. Now, another question raises: what operation(s) could potentially benefit from Smart SSDs. In Lucene, there are three basic operations commonly used: list \textsf{intersection}, \textsf{union} and \textsf{difference}. They are also widely adopted in many commercial search engines (e.g., Google advanced search\footnote{\small\url{http://www.google.com/advanced_search}}). We investigate each operation and set up a simple principle that the output size should be smaller than its input size. Otherwise, Smart SSDs cannot save any data movement. Let $A$ and $B$ be two inverted lists (assuming $A$ is shorter than $B$ to capture the real case of skewed lists).
 \begin{itemize}%[noitemsep, topsep=2pt]
-  \item For the \textsf{intersection}, the intersection result is usually much smaller compared to each inverted list, i.e., $|A\cap B| \ll |A| + |B|$. E.g., in Bing search, for 76\% of the queries, the intersection result size is two orders of magnitude smaller than the shortest inverted list involved~\cite{Ding2011}. Similar results are observed in our real datasets. Thus executing intersection inside SSD may be a cost-effective choice, as it can save a lot of host I/O interface bandwidth.
+  \item \textsf{Intersection}: The result size of the intersection is usually even smaller compared to each inverted list, i.e., $|A\cap B| \ll |A| + |B|$. E.g., in Bing search, for 76\% of the queries, the intersection result size is two orders of magnitude smaller than the shortest inverted list involved~\cite{Ding2011}. We also observed similar results with our real datasets. Thus, executing intersection inside SSDs may be a smart choice, as it can save a lot of host I/O interface bandwidth.
 
-  \item For the \textsf{union}, the union result size can be similar to the total size of the inverted lists. This is because, $|A\cup B| = |A| + |B| - |A\cap B|$, while typically, $|A\cap B| \ll |A| + |B|$, then $|A\cup B| \approx |A| + |B|$. Unless $|A\cap B|$ is similar to $|A| + |B|$. An extreme case is $A = B$, then $|A\cup B| = |A| = |B|$, meaning that, we can save 50\% of data transfer. However, in general, it is not cost-effectively to offload \textsf{union} to Smart SSD.
+  \item \textsf{Union}: The union result size can be similar to the total size of the inverted lists. That is because, $|A\cup B| = |A| + |B| - |A\cap B|$, while typically, $|A\cap B| \ll |A| + |B|$, then $|A\cup B| \approx |A| + |B|$. Unless $|A\cap B|$ is similar to $|A| + |B|$. An extreme case is $A = B$, then $|A\cup B| = |A| = |B|$, meaning that we can save 50\% of data transfer. However, in general, it is not cost-effective to offload \textsf{union} to Smart SSDs.
 
-  \item For the \textsf{difference}, it is to find all the documents in one list but not in the other list. As the operation is ordering-sensitive, we consider two cases: $(A - B)$ and $(B - A)$. For the former case, $|A - B| = |A| - |A\cap B| < |A| \ll |A| + |B|$, i.e., sending the results of $(A - B)$ saves a lot of data transfer. However, the other case may not save much data transfer because $|B - A| = |B| - |A\cap B| \approx |B| \approx |B| + |A|$. In summary, we still consider the \textsf{difference} as a possible operation for query offloading.
+  \item \textsf{Difference}: It is used to find all the documents in one list but not in the other list. Since this operation is ordering-sensitive, we consider two cases: $(A - B)$ and $(B - A)$. For the former case, $|A - B| = |A| - |A\cap B| < |A| \ll |A| + |B|$, i.e., sending the results of $(A - B)$ saves a lot of data transfer if executed in Smart SSDs. On the other hand, the latter case may not save much data transfer because $|B - A| = |B| - |A\cap B| \approx |B| \approx |B| + |A|$. Consequently, we still consider the \textsf{difference} as a possible candidate for query offloading.
 \end{itemize}
 
-\textbf{Step X5: similarity computation and ranking}. After the list operation (e.g., intersection) is done, we get a list of qualified documents. While users are interested in the top most relevant documents. Thus, we need to apply a ranking mode (e.g., the standard Okapi BM25 model~\cite{Robertson1994}) to compute the similarity between the query $q$ and every qualified document $d$; then rank the results to return top-$k$ most relevant ones. It is CPU-intensive, following the analysis, it may not be cost-effective to be offloaded. However, it is beneficial when the result size is too big. After step X5, only top-$k$ (e.g., 3) results should be returned, which saves a lot of I/Os. Thus it is a tradeoff. From the design aspect, we consider two options: (1) do not offload step X5, this case, step X5 is done at the host side; (2) offload this step, in this case, step X5 is done at the device side and only top-$k$ results are returned to users.
+\textbf{Step S5: Compute similarity and rank}. After the aforementioned list operations are completed, we can get a list of qualified documents. %Lucene assumes the results are small enough to fit into main memory.
+This step applies a ranking model to the qualified documents in order to determine the similarities between the query and these documents. This is because users are more interested in the most relevant documents. This step is CPU-intensive so that it may not be a good candidate to offload to Smart SSDs. However, it is beneficial when the result size is very large because after step S5, only the top ranked results are returned. This can save a lot of I/Os overheads. From the design point of view, we can consider two options: (1) do not offload step S5. In this case, step S5 is executed at the host side; (2) offload this step. In this case, step S5 is executed by Smart SSDs.
 
-\begin{table}[htbp]
+
+\begin{table}[htbp]\small
 \centering
 \begin{tabular}{l|c|c}\hline\hline
 &Non-Ranked & Ranked \\\hline
@@ -55,8 +74,9 @@ Reading inverted lists from disk to host memory requires many I/Os, taking aroun
 \end{tabular}
 \caption{Design space}\label{tab:designSpace}
 \end{table}
-In a summary, we consider offloading the five query operations that could be potentially benefit from Smart SSD: \textsf{intersection}, \textsf{ranked intersection}, \textsf{ranked union}, \textsf{difference}, and \textsf{ranked difference}, see Table~\ref{tab:designSpace}. The offloading of non-ranked operations means that step X3 and X4 will be executed inside device while step X5 is executed at the host side. The offloading of ranked operations means that step X3, X4 and X5 will be executed inside the device. In either case, step X1 and X2 runs at the host side.
+In summary, we consider offloading five query operations that could potentially benefit from Smart SSDs: \textsf{intersection}, \textsf{ranked intersection}, \textsf{ranked union}, \textsf{difference}, and \textsf{ranked difference} (please see Table~\ref{tab:designSpace}). The offloading of non-ranked operations means that only step S3 and S4 will be executed inside SSDs while step S5 is executed at the host side. The offloading of ranked operations means that all step S3, S4 and S5 will be executed inside SSDs. In either case, step S1 and S2 are executed at the host side.
 
+%We note that Lucene may not embrace all state-of-the-art query processing techniques. E.g., step S4 and S5 could be algorithmically combined for early termination~\cite{Broder2003EQE,Fagin2001}.
 
 \subsection{System Architecture}\label{sec:sysArch}
 
@@ -65,12 +85,14 @@ In a summary, we consider offloading the five query operations that could be pot
   \begin{tabular}{ccc}
  \includegraphics[width=1.0\columnwidth]{figures/SmartSSDLucene.pdf}
 \end{tabular}
-  \caption{Co-design of web search engine and Smart SSD}
+  \caption{Co-design architecture of Lucene and Smart SSDs}
   \label{fig:SmartSSDLucene}
  \end{figure}
 
-Figure~\ref{fig:SmartSSDLucene} shows the design architecture of search engine and SSD, with the query processing logics offloaded.
-We integrated Smart SSD with Lucene (an open source search engine) following this architecture. Thus, Lucene can directly interact with Smart SSD.
+Figure~\ref{fig:SmartSSDLucene} shows the co-design architecture of Lucene search engine and Smart SSDs. We modified Lucene codes to interact with Smart SSDs.
+%We integrated Smart SSD with Lucene (an open source search engine) following this architecture. Thus, Lucene can directly interact with Smart SSD.
 
-It works as follows. Assume the intersection operation is offloaded. Upon receiving a query from the host web search engine (e.g., Lucene), it parses the query and get the metadata from host machine (i.e., step X1 and X2 in Figure~\ref{fig:searchEngineArch}). Then, send the metadata to Smart SSD via OPEN API.
-In the open function running at Smart SSD, it starts to load the inverted lists to device DRAM. After all the lists are loaded, then execute the list intersection. When the intersection is finished, put the results to the output buffer. The host machine can poll the status of Smart SSD in a heart-beat manner via GET API. We set to  polling interval to be 1ms. When the host side receives the intersection results, it will execute step X5 to finish the query, and return the top ranked results to end users. However, if the ranked operation is offloaded, host machine can directly return results to users upon receiving results from Smart SSD.
+It operates as follows. Assume only the \textsf{intersection} operation is offloaded. The host Lucene is responsible for receiving users queries. Upon receiving a query $q(t_1,t_2,...,t_u)$, where $t_i$ is a query term. Lucene parses the query $q$ to $u$ query terms (Step S1), then gets the metadata for each query term $t_i$ (Step S2). Then, it sends all the metadata information to Smart SSDs via the OPEN API.
+The Smart SSD then starts to load the $u$ inverted lists to the device memory according to the metadata. The DRAM is generally of several hundred MBs, which is big enough to store the inverted lists of a typical query.
+When all the $u$ inverted lists are loaded to DRAM, the Smart SSD executes list intersection. Once it is done, the results are ready to return to the host in an output buffer.
+The host Lucene keeps monitoring the status of Smart SSDs in a heart-beat manner via the GET API. We set the polling interval to be 1 ms. Once the host Lucene receives the intersection results, it executes step S5 to complete the query, and returns the top ranked results to end users. If the ranked operation is offloaded, Smart SSDs take care of step S5.
