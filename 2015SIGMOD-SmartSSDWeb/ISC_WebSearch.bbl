@@ -1,0 +1,190 @@
+\begin{thebibliography}{10}
+
+\bibitem{Acharya1998ADP}
+A.~Acharya, M.~Uysal, and J.~Saltz.
+\newblock Active disks: Programming model, algorithms and evaluation.
+\newblock In {\em ASPLOS}, pages 81--91, 1998.
+
+\bibitem{AthanassoulisACGS10}
+M.~Athanassoulis, A.~Ailamaki, S.~Chen, P.~B. Gibbons, and R.~Stoica.
+\newblock Flash in a {DBMS:} where and how?
+\newblock {\em {IEEE} Data Eng. Bull.}, 33(4):28--34, 2010.
+
+\bibitem{BaeKKOP13}
+D.~Bae, J.~Kim, S.~Kim, H.~Oh, and C.~Park.
+\newblock Intelligent {SSD:} a turbo for big data mining.
+\newblock In {\em CIKM}, pages 1573--1576, 2013.
+
+\bibitem{Baezayates05}
+R.~Baeza-yates, R.~Salinger, and S.~Chile.
+\newblock Experimental analysis of a fast intersection algorithm for sorted
+  sequences.
+\newblock In {\em SPIRE}, pages 13--24, 2005.
+
+\bibitem{Balasubramonian14}
+R.~Balasubramonian, J.~Chang, T.~Manning, J.~H. Moreno, R.~Murphy, R.~Nair, and
+  S.~Swanson.
+\newblock Near-data processing: Insights from a micro-46 workshop.
+\newblock {\em Micro, IEEE}, 34(4):36--42, 2014.
+
+\bibitem{Broder2003EQE}
+A.~Z. Broder, D.~Carmel, M.~Herscovici, A.~Soffer, and J.~Zien.
+\newblock Efficient query evaluation using a two-level retrieval process.
+\newblock In {\em CIKM}, pages 426--434, 2003.
+
+\bibitem{Busch2012ERS}
+M.~Busch, K.~Gade, B.~Larson, P.~Lok, S.~Luckenbill, and J.~Lin.
+\newblock Earlybird: Real-time search at twitter.
+\newblock In {\em ICDE}, pages 1360--1369, 2012.
+
+\bibitem{Caulfield2010}
+A.~M. Caulfield, A.~De, J.~Coburn, T.~I. Mollow, R.~K. Gupta, and S.~Swanson.
+\newblock Moneta: A high-performance storage array architecture for
+  next-generation, non-volatile memories.
+\newblock In {\em MICRO}, pages 385--395, 2010.
+
+\bibitem{Chung2009SFT}
+T.-S. Chung, D.-J. Park, S.~Park, D.-H. Lee, S.-W. Lee, and H.-J. Song.
+\newblock A survey of flash translation layer.
+\newblock {\em J. Syst. Archit.}, 55(5-6):332--343, 2009.
+
+\bibitem{De2013}
+A.~De, M.~Gokhale, R.~Gupta, and S.~Swanson.
+\newblock Minerva: Accelerating data analysis in next-generation ssds.
+\newblock In {\em FCCM}, pages 9--16, 2013.
+
+\bibitem{Demaine2000ASI}
+E.~D. Demaine, A.~L\'{o}pez-Ortiz, and J.~I. Munro.
+\newblock Adaptive set intersections, unions, and differences.
+\newblock In {\em SODA}, pages 743--752, 2000.
+
+\bibitem{DLMI01}
+E.~D. Demaine, A.~L\'{o}pez-Ortiz, and J.~I. Munro.
+\newblock Experiments on adaptive set intersections for text retrieval systems.
+\newblock In {\em ALENEX}, pages 91--104, 2001.
+
+\bibitem{Ding2011}
+B.~Ding and A.~C. K\"{o}nig.
+\newblock Fast set intersection in memory.
+\newblock {\em Proc. VLDB Endow.}, 4(4):255--266, 2011.
+
+\bibitem{Do2013QPS}
+J.~Do, Y.-S. Kee, J.~M. Patel, C.~Park, K.~Park, and D.~J. DeWitt.
+\newblock Query processing on smart ssds: Opportunities and challenges.
+\newblock In {\em SIGMOD}, pages 1221--1230, 2013.
+
+\bibitem{Do2011TDB}
+J.~Do, D.~Zhang, J.~M. Patel, D.~J. DeWitt, J.~F. Naughton, and A.~Halverson.
+\newblock Turbocharging dbms buffer pool using ssds.
+\newblock In {\em SIGMOD}, pages 1113--1124, 2011.
+
+\bibitem{Fagin2001}
+R.~Fagin, A.~Lotem, and M.~Naor.
+\newblock Optimal aggregation algorithms for middleware.
+\newblock In {\em PODS}, pages 102--113, 2001.
+
+\bibitem{GarciaMolina2008}
+H.~Garcia-Molina, J.~D. Ullman, and J.~Widom.
+\newblock {\em Database Systems: The Complete Book}.
+\newblock Prentice Hall Press, 2008.
+
+\bibitem{Julich13}
+{J\"{u}lich Research Center}.
+\newblock Blue gene active storage boosts i/o performance at jsc.
+\newblock
+  \url{http://cacm.acm.org/news/169841-blue-gene-active-storage-boosts-i-o-performance-at-jsc},
+  2013.
+
+\bibitem{Kannan1978}
+K.~Kannan.
+\newblock The design of a mass memory for a database computer.
+\newblock In {\em ISCA}, pages 44--51, 1978.
+
+\bibitem{Keeton1998}
+K.~Keeton, D.~A. Patterson, and J.~M. Hellerstein.
+\newblock A case for intelligent disks (idisks).
+\newblock {\em SIGMOD Rec.}, 27(3):42--52, 1998.
+
+\bibitem{KimOPCL11}
+S.~Kim, H.~Oh, C.~Park, S.~Cho, and S.~Lee.
+\newblock Fast, energy efficient scan inside flash memory.
+\newblock In {\em ADMS}, pages 36--43, 2011.
+
+\bibitem{Young14}
+Y.-S. Lee, L.~C. Quero, Y.~Lee, J.-S. Kim, and S.~Maeng.
+\newblock Accelerating external sorting via on-the-fly data merge in active
+  ssds.
+\newblock In {\em HotStorage}, 2014.
+
+\bibitem{LeilichSZ78}
+H.~Leilich, G.~Stiege, and H.~C. Zeidler.
+\newblock A search processor for data base management systems.
+\newblock In {\em VLDB}, pages 280--287, 1978.
+
+\bibitem{Li2010TIS}
+Y.~Li, B.~He, R.~J. Yang, Q.~Luo, and K.~Yi.
+\newblock Tree indexing on solid state drives.
+\newblock {\em Proc. VLDB Endow.}, 3(1-2):1195--1206, 2010.
+
+\bibitem{Hien2013}
+H.~Luu and R.~Rangaswamy.
+\newblock How lucene powers the linkedin segmentation and targeting platform.
+\newblock Lucene/SOLR Revolution, 2013.
+
+\bibitem{M08}
+C.~D. Manning, P.~Raghavan, and H.~Schtze.
+\newblock {\em Introduction to Information Retrieval}.
+\newblock Cambridge University Press, 2008.
+
+\bibitem{Oracle2010}
+{Oracle Corporation}.
+\newblock Oracle exadata white paper, 2010.
+
+\bibitem{Ozkarahan1977}
+E.~A. Ozkarahan, S.~A. Schuster, and K.~C. Sevcik.
+\newblock Performance evaluation of a relational associative processor.
+\newblock {\em ACM Trans. Database Syst.}, 2(2):175--195, 1977.
+
+\bibitem{Pugh1990}
+W.~Pugh.
+\newblock Skip lists: A probabilistic alternative to balanced trees.
+\newblock {\em Commun. ACM}, 33(6):668--676, 1990.
+
+\bibitem{Riedel1998ASL}
+E.~Riedel, G.~A. Gibson, and C.~Faloutsos.
+\newblock Active storage for large-scale data mining and multimedia.
+\newblock In {\em VLDB}, pages 62--73, 1998.
+
+\bibitem{Robertson1994}
+S.~E. Robertson and S.~Walker.
+\newblock Some simple effective approximations to the 2-poisson model for
+  probabilistic weighted retrieval.
+\newblock In {\em SIGIR}, pages 232--241, 1994.
+
+\bibitem{Singhal01}
+A.~Singhal.
+\newblock Modern information retrieval: {A} brief overview.
+\newblock {\em {IEEE} Data Eng. Bull.}, 24(4):35--43, 2001.
+
+\bibitem{Su1975}
+S.~Y.~W. Su and G.~J. Lipovski.
+\newblock Cassm: A cellular system for very large data bases.
+\newblock In {\em VLDB}, pages 456--472, 1975.
+
+\bibitem{Teradata20}
+{Teradata Corporation}.
+\newblock Teradata extreme performance alliance.
+\newblock \url{http://www.teradata.com/t/extreme-performance-appliance}.
+
+\bibitem{WoodsIA14}
+L.~Woods, Z.~Istv{\'{a}}n, and G.~Alonso.
+\newblock Ibex - an intelligent storage engine with support for advanced {SQL}
+  off-loading.
+\newblock {\em {PVLDB}}, 7(11):963--974, 2014.
+
+\bibitem{ZM06}
+J.~Zobel and A.~Moffat.
+\newblock Inverted files for text search engines.
+\newblock {\em CSUR}, 38, 2006.
+
+\end{thebibliography}
