@@ -1,4 +1,5 @@
-\documentclass[letterpaper]{sig-alternate}%sig-alternate-2013 sig-alt-full
+%\documentclass[letterpaper]{sig-alternate}%sig-alternate-2013 sig-alt-full
+\documentclass{sig-alternate}%sig-alternate-2013 sig-alt-full
 
 \def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
 \makeatother \makeatletter
@@ -11,12 +12,28 @@
 \usepackage{graphicx}
 \usepackage{color}
 
+%\usepackage[pagewise]{lineno}
+%\linenumbers
+
+
 
 \usepackage{url}
 \makeatletter
 \g@addto@macro{\UrlBreaks}{\UrlOrds} % For url breaks
 \makeatother
 
+%white space
+\usepackage{setspace}
+%\setstretch{0.98}
+
+%-------------------------------------------------------------------------------
+% Whitespace
+%-------------------------------------------------------------------------------
+% The "caption" package allows captions for figures that are not actually in a floating environment (e.g. framed environment).
+\usepackage[labelfont=bf]{caption}
+% Adjust whitespace above and below captions
+\addtolength{\abovecaptionskip}{-4pt}
+\addtolength{\belowcaptionskip}{-8pt}
 
 \usepackage{enumitem}
 \usepackage{verbatim}

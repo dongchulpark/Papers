@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.18)  4 NOV 2014 05:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.18)  6 NOV 2014 21:41
 entering extended mode
-**ISC_WebSearch.tex
-(C:\Users\Lenovo\Dropbox\ISC_WebSearch\ISC_WebSearch.tex
+**ISC_WebSearch_SIGMOD15.tex
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\ISC_WebSearch_SIGMOD15.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
 , bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
@@ -10,7 +10,8 @@ ian, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, icelandic, 
 -x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
 ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
 elsh, loaded.
-(C:\Users\Lenovo\Dropbox\ISC_WebSearch\texheader.tex (C:\Users\Lenovo\Dropbox\ISC_WebSearch\sig-alternate.cls
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\texheader.tex
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\sig-alternate.cls
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
@@ -250,13 +251,42 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen129
+\captionmargin@=\dimen130
+\captionwidth=\dimen131
+\caption@tempdima=\dimen132
+\caption@indent=\dimen133
+\caption@parindent=\dimen134
+\caption@hangindent=\dimen135
+\abovecaptionskip=\skip60
+\belowcaptionskip=\skip61
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip 10pt \setbox \@tempboxa \hbox {\textbf {#1:} #2} \ifdim 
+\wd \@tempboxa >\hsize {\textbf {#1:} #2}\par \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } \fi .
+\c@ContinuedFloat=\count113
+) (C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip60
-\enit@outerparindent=\dimen129
+\labelindent=\skip62
+\enit@outerparindent=\dimen136
 \enit@toks=\toks36
 \enit@inbox=\box38
-\enitdp@description=\count113
+\enitdp@description=\count114
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
@@ -268,13 +298,13 @@ Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks39
 ) (C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\preprint\balance.sty
 Package: balance 1999/02/23 4.3 (PWD)
-\oldvsize=\dimen130
+\oldvsize=\dimen137
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count114
+\c@float@type=\count115
 \float@exts=\toks40
 \float@box=\box39
 \@float@everytoks=\toks41
@@ -282,36 +312,36 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip61
-\LTright=\skip62
-\LTpre=\skip63
-\LTpost=\skip64
-\LTchunksize=\count115
-\LTcapwidth=\dimen131
+\LTleft=\skip63
+\LTright=\skip64
+\LTpre=\skip65
+\LTpost=\skip66
+\LTchunksize=\count116
+\LTcapwidth=\dimen138
 \LT@head=\box41
 \LT@firsthead=\box42
 \LT@foot=\box43
 \LT@lastfoot=\box44
-\LT@cols=\count116
-\LT@rows=\count117
-\c@LT@tables=\count118
-\c@LT@chunks=\count119
+\LT@cols=\count117
+\LT@rows=\count118
+\c@LT@tables=\count119
+\c@LT@chunks=\count120
 \LT@p@ftn=\toks42
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen132
-\extrarowheight=\dimen133
+\col@sep=\dimen139
+\extrarowheight=\dimen140
 \NC@list=\toks43
-\extratabsurround=\skip65
-\backup@length=\skip66
+\extratabsurround=\skip67
+\backup@length=\skip68
 )
 (C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip67
-\fb@frw=\dimen134
-\fb@frh=\dimen135
-\FrameRule=\dimen136
-\FrameSep=\dimen137
+\OuterFrameSep=\skip69
+\fb@frw=\dimen141
+\fb@frh=\dimen142
+\FrameRule=\dimen143
+\FrameSep=\dimen144
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
@@ -376,772 +406,782 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\upsy.fd"
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
-
-LaTeX Warning: Unused global option(s):
-    [letterpaper].
-
-(C:\Users\Lenovo\Dropbox\ISC_WebSearch\ISC_WebSearch.aux
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\ISC_WebSearch_SIGMOD15.aux
 
 LaTeX Warning: Label `alg1:0' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 83.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count120
-\scratchdimen=\dimen138
+\scratchcounter=\count121
+\scratchdimen=\dimen145
 \scratchbox=\box45
-\nofMPsegments=\count121
-\nofMParguments=\count122
+\nofMPsegments=\count122
+\nofMParguments=\count123
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count123
-\MPscratchDim=\dimen139
-\MPnumerator=\count124
-\makeMPintoPDFobject=\count125
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen146
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
 \everyMPtoPDFconversion=\toks45
-))
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+ (C:\Users\Lenovo\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\ltcaption.sty
+Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 12.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 13.
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\abstract.tex
+) (C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\abstract.tex
 LaTeX Font Info:    Try loading font information for T1+phv on input line 14.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-)) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\introduction.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 13.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [1{C:/Users/Lenovo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-]) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\background.tex
-<figures/SSDInternals.pdf, id=12, 480.0635pt x 252.37285pt>
-File: figures/SSDInternals.pdf Graphic file (type pdf)
- <use figures/SSDInternals.pdf>
-Package pdftex.def Info: figures/SSDInternals.pdf used on input line 12.
-(pdftex.def)             Requested size: 227.99927pt x 119.86293pt.
+)
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 14.
-
-Overfull \hbox (1.27829pt too wide) in paragraph at lines 18--19
-\T1/ptm/m/n/9 con-troller, em-bed-ded pro-ces-sors, DRAM con-troller, and flash mem-
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 23.
+)
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\introduction.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 9.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (5.99477pt too wide) in paragraph at lines 11--14
+\T1/ptm/m/n/9 as yet-another-faster HDDs (e.g., SSD-aware cache man-age-ment [37,
  []
 
-<figures/searchEngineArch.pdf, id=13, 311.81453pt x 355.64017pt>
-File: figures/searchEngineArch.pdf Graphic file (type pdf)
- <use figures/searchEngineArch.pdf>
-Package pdftex.def Info: figures/searchEngineArch.pdf used on input line 32.
-(pdftex.def)             Requested size: 120.0pt x 136.8649pt.
-)
-(C:\Users\Lenovo\Dropbox\ISC_WebSearch\smartSSDArch.tex
-<figures/SmartSSD_Architecture.pdf, id=14, 397.44986pt x 239.27594pt>
+[1{C:/Users/Lenovo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+])
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\background.tex
+Overfull \hbox (10.26913pt too wide) in paragraph at lines 7--8
+[]\T1/ptm/m/n/9 The Smart SSD ecosys-tem con-sists of both hard-ware (Sec-tion 2.1.1[])
+ []
+
+<figures/SSDInternals.pdf, id=12, 481.57516pt x 254.89227pt>
+File: figures/SSDInternals.pdf Graphic file (type pdf)
+ <use figures/SSDInternals.pdf>
+Package pdftex.def Info: figures/SSDInternals.pdf used on input line 13.
+(pdftex.def)             Requested size: 227.99927pt x 120.67838pt.
+
+Overfull \hbox (1.58427pt too wide) in paragraph at lines 20--22
+\T1/ptm/m/n/9 The hard-ware ar-chi-tec-ture of Smart SSDs is sim-i-lar to reg-u-lar SSDs.
+ []
+
+
+Overfull \hbox (4.03223pt too wide) in paragraph at lines 20--22
+\T1/ptm/m/n/9 troller, em-bed-ded pro-ces-sors, DRAM con-troller, and flash con-troller. 
+ []
+
+<figures/SmartSSD_Architecture.pdf, id=13, 397.44986pt x 239.27594pt>
 File: figures/SmartSSD_Architecture.pdf Graphic file (type pdf)
  <use figures/SmartSSD_Architecture.pdf>
-Package pdftex.def Info: figures/SmartSSD_Architecture.pdf used on input line 15.
-(pdftex.def)             Requested size: 240.0pt x 144.49037pt.
- [2 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/SSDInternals.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/sear
-chEngineArch.pdf
+Package pdftex.def Info: figures/SmartSSD_Architecture.pdf used on input line 46.
+(pdftex.def)             Requested size: 227.99927pt x 137.26494pt.
+ [2 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/SSDInternals.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIG
+MOD15/figures/SmartSSD_Architecture.pdf
 
-pdfTeX warning: pdflatex.exe (file C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/searchEngineArch.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
->]) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\design.tex
+pdfTeX warning: pdflatex.exe (file C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/SmartSSD_Architecture.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>] <figures/searchEngineArch.pdf, id=44, 317.85951pt x 362.69202pt>
+File: figures/searchEngineArch.pdf Graphic file (type pdf)
+ <use figures/searchEngineArch.pdf>
+Package pdftex.def Info: figures/searchEngineArch.pdf used on input line 67.
+(pdftex.def)             Requested size: 95.99854pt x 109.53896pt.
+)
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\design.tex
 Overfull \hbox (1.65213pt too wide) in paragraph at lines 2--2
 []\secfnt SYSTEM CO-DESIGN: SMART SSD FOR
  []
 
-<figures/timeBreakDownRegularSSD.pdf, id=42, 498.70186pt x 312.82172pt>
-File: figures/timeBreakDownRegularSSD.pdf Graphic file (type pdf)
- <use figures/timeBreakDownRegularSSD.pdf>
-Package pdftex.def Info: figures/timeBreakDownRegularSSD.pdf used on input line 24.
-(pdftex.def)             Requested size: 192.00073pt x 120.4391pt.
+Package epstopdf Info: Source file: <figures/timeBreakDownRegularSSD.eps>
+(epstopdf)                    date: 2014-11-06 14:20:02
+(epstopdf)                    size: 20324 bytes
+(epstopdf)             Output file: <figures/timeBreakDownRegularSSD-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-11-06 14:20:14
+(epstopdf)                    size: 4642 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/timeBreakDownRegularSSD-eps-converted-to.pdf figures/timeBre
+akDownRegularSSD.eps>
+(epstopdf)             \includegraphics on input line 26.
+Package epstopdf Info: Output file is already uptodate.
+<figures/timeBreakDownRegularSSD-eps-converted-to.pdf, id=45, 251.94125pt x 176.66pt>
+File: figures/timeBreakDownRegularSSD-eps-converted-to.pdf Graphic file (type pdf)
 
-[3 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/SmartSSD_Architecture.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figu
-res/timeBreakDownRegularSSD.pdf
-
-pdfTeX warning: pdflatex.exe (file C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/timeBreakDownRegularSSD.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (2.44002pt too wide) in paragraph at lines 77--78
-\T1/ptm/m/n/9 (please see Ta-ble 1[]). The of-fload-ing of non-ranked op-er-a-tions means
- []
-
-<figures/SmartSSDLucene.pdf, id=63, 684.58151pt x 386.36766pt>
+<use figures/timeBreakDownRegularSSD-eps-converted-to.pdf>
+Package pdftex.def Info: figures/timeBreakDownRegularSSD-eps-converted-to.pdf used on input line 26.
+(pdftex.def)             Requested size: 132.00073pt x 92.55919pt.
+ [3 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/searchEngineArch.pdf>] <figures/SmartSSDLucene.pdf, id=56, 6
+84.58151pt x 386.36766pt>
 File: figures/SmartSSDLucene.pdf Graphic file (type pdf)
  <use figures/SmartSSDLucene.pdf>
-Package pdftex.def Info: figures/SmartSSDLucene.pdf used on input line 86.
+Package pdftex.def Info: figures/SmartSSDLucene.pdf used on input line 89.
 (pdftex.def)             Requested size: 240.0pt x 135.44882pt.
 
-Overfull \hbox (10.79999pt too wide) in paragraph at lines 85--88
+Overfull \hbox (10.79999pt too wide) in paragraph at lines 88--91
  [][] 
  []
 
-) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\implementation.tex [4 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/SmartSSDLu
+) (C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\implementation.tex [4 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/
+figures/timeBreakDownRegularSSD-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/SmartSSDLu
 cene.pdf>]
-Overfull \hbox (11.51137pt too wide) in paragraph at lines 23--24
-\T1/ptm/m/n/9 such as sort-merge based al-go-rithm [17], skip list based al-go-rithm [26],
+Overfull \hbox (11.51137pt too wide) in paragraph at lines 22--23
+\T1/ptm/m/n/9 such as sort-merge based al-go-rithm [16], skip list based al-go-rithm [27],
  []
 
 
-Overfull \hbox (2.33199pt too wide) in paragraph at lines 23--24
-\T1/ptm/m/n/9 hash based al-go-rithm, di-vide and con-quer based al-go-rithm [4], adap-
+Overfull \hbox (2.33199pt too wide) in paragraph at lines 22--23
+\T1/ptm/m/n/9 hash based al-go-rithm, di-vide and con-quer based al-go-rithm [3], adap-
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
 [5]
-Overfull \hbox (8.63548pt too wide) in paragraph at lines 132--134
+Overfull \hbox (2.1334pt too wide) in paragraph at lines 96--97
+[]\T1/ptm/m/n/9 Our im-ple-men-ta-tion mostly uses bi-nary search for el-e-ment check-
+ []
+
+
+Overfull \hbox (8.63548pt too wide) in paragraph at lines 125--128
 \T1/ptm/m/n/9 ing the above equa-tions. How-ever, all pa-ram-e-ters in $\OML/cmm/m/it/9 Similarity\OT1/cmr/m/n/9 (\OML/c
 mm/m/it/9 t; d\OT1/cmr/m/n/9 )$
  []
 
-) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\experiments.tex
-Overfull \hbox (7.92064pt too wide) in paragraph at lines 6--7
-[]\T1/ptm/m/n/9 To eval-u-ate our sys-tem per-for-mance, we em-ployee both real dataset
+
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+)
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\experiments.tex [6]
+Overfull \hbox (3.32202pt too wide) in paragraph at lines 57--59
+\T1/ptm/m/n/9 tion 6.2[]), \T1/phv/m/n/9 dif-fer-ence \T1/ptm/m/n/9 (Sec-tion 6.3[]), \T1/phv/m/n/9 ranked dif-fer-ence 
+\T1/ptm/m/n/9 (Sec-tion 6.4[]),
  []
 
+Package epstopdf Info: Source file: <figures/timeBreakDownRegularSSD2.eps>
+(epstopdf)                    date: 2014-11-03 16:32:06
+(epstopdf)                    size: 20371 bytes
+(epstopdf)             Output file: <figures/timeBreakDownRegularSSD2-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-11-03 16:32:24
+(epstopdf)                    size: 4914 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/timeBreakDownRegularSSD2-eps-converted-to.pdf figures/timeBr
+eakDownRegularSSD2.eps>
+(epstopdf)             \includegraphics on input line 99.
+Package epstopdf Info: Output file is already uptodate.
+<figures/timeBreakDownRegularSSD2-eps-converted-to.pdf, id=94, 361.35pt x 257.96375pt>
+File: figures/timeBreakDownRegularSSD2-eps-converted-to.pdf Graphic file (type pdf)
 
-Overfull \hbox (28.88113pt too wide) in paragraph at lines 12--15
-[]\T1/ptm/m/n/9 The syn-thetic dataset al-lows us to bet-ter un-der-stand var-i-ous performance-
- []
-
-[6]
-Overfull \hbox (8.68616pt too wide) in paragraph at lines 64--65
-[]\T1/ptm/m/n/9 We com-pare two ap-proaches: (1) \T1/ptm/m/it/9 Smart SSD\T1/ptm/m/n/9 : our in-te-grated Lucene
- []
-
-<figures/timeBreakDownRegSmart.pdf, id=97, 566.20224pt x 355.63966pt>
-File: figures/timeBreakDownRegSmart.pdf Graphic file (type pdf)
- <use figures/timeBreakDownRegSmart.pdf>
-Package pdftex.def Info: figures/timeBreakDownRegSmart.pdf used on input line 91.
-(pdftex.def)             Requested size: 240.0pt x 150.746pt.
-
-<figures/timeBreakDownSmartSSD.pdf, id=98, 322.39345pt x 185.87944pt>
-File: figures/timeBreakDownSmartSSD.pdf Graphic file (type pdf)
- <use figures/timeBreakDownSmartSSD.pdf>
-Package pdftex.def Info: figures/timeBreakDownSmartSSD.pdf used on input line 101.
-(pdftex.def)             Requested size: 167.99927pt x 96.86206pt.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 112.
-
-<figures/banner2.pdf, id=99, 249.7571pt x 17.38043pt>
-File: figures/banner2.pdf Graphic file (type pdf)
- <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 117.
-(pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
-Package epstopdf Info: Source file: <figures/Intersection-time-VaryListLen.eps>
-(epstopdf)                    date: 2014-10-30 09:17:31
-(epstopdf)                    size: 19419 bytes
-(epstopdf)             Output file: <figures/Intersection-time-VaryListLen-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 09:17:41
-(epstopdf)                    size: 3375 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/Intersection-time-VaryListLen-eps-converted-to.pdf figures/I
-ntersection-time-VaryListLen.eps>
-(epstopdf)             \includegraphics on input line 122.
+<use figures/timeBreakDownRegularSSD2-eps-converted-to.pdf>
+Package pdftex.def Info: figures/timeBreakDownRegularSSD2-eps-converted-to.pdf used on input line 99.
+(pdftex.def)             Requested size: 120.0pt x 85.66756pt.
+Package epstopdf Info: Source file: <figures/timeBreakDownSmartSSD.eps>
+(epstopdf)                    date: 2014-11-03 16:32:02
+(epstopdf)                    size: 20369 bytes
+(epstopdf)             Output file: <figures/timeBreakDownSmartSSD-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-11-03 16:32:24
+(epstopdf)                    size: 4910 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/timeBreakDownSmartSSD-eps-converted-to.pdf figures/timeBreak
+DownSmartSSD.eps>
+(epstopdf)             \includegraphics on input line 100.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/Intersection-time-VaryListLen-eps-converted-to.pdf, id=100, 251.94125pt x 181.67876pt>
+<figures/timeBreakDownSmartSSD-eps-converted-to.pdf, id=95, 361.35pt x 257.96375pt>
+File: figures/timeBreakDownSmartSSD-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/timeBreakDownSmartSSD-eps-converted-to.pdf>
+Package pdftex.def Info: figures/timeBreakDownSmartSSD-eps-converted-to.pdf used on input line 100.
+(pdftex.def)             Requested size: 120.0pt x 85.66756pt.
+
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 98--103
+ [][] 
+ []
+
+<figures/timeBreakDownSmartSSD.pdf, id=96, 390.39752pt x 189.9095pt>
+File: figures/timeBreakDownSmartSSD.pdf Graphic file (type pdf)
+ <use figures/timeBreakDownSmartSSD.pdf>
+Package pdftex.def Info: figures/timeBreakDownSmartSSD.pdf used on input line 114.
+(pdftex.def)             Requested size: 192.00073pt x 93.39839pt.
+
+<figures/banner2.pdf, id=97, 249.7571pt x 17.38043pt>
+File: figures/banner2.pdf Graphic file (type pdf)
+ <use figures/banner2.pdf>
+Package pdftex.def Info: figures/banner2.pdf used on input line 131.
+(pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
+
+<figures/Intersection-time-VaryListLen-eps-converted-to.pdf, id=98, 251.94125pt x 181.67876pt>
 File: figures/Intersection-time-VaryListLen-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-time-VaryListLen-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-time-VaryListLen-eps-converted-to.pdf used on input line 122.
+Package pdftex.def Info: figures/Intersection-time-VaryListLen-eps-converted-to.pdf used on input line 136.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
-Package epstopdf Info: Source file: <figures/Intersection-energy-VaryListLen.eps>
-(epstopdf)                    date: 2014-10-30 09:27:26
-(epstopdf)                    size: 19189 bytes
-(epstopdf)             Output file: <figures/Intersection-energy-VaryListLen-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 09:27:35
-(epstopdf)                    size: 3344 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/Intersection-energy-VaryListLen-eps-converted-to.pdf figures
-/Intersection-energy-VaryListLen.eps>
-(epstopdf)             \includegraphics on input line 123.
-Package epstopdf Info: Output file is already uptodate.
 
-<figures/Intersection-energy-VaryListLen-eps-converted-to.pdf, id=101, 251.94125pt x 181.67876pt>
+<figures/Intersection-energy-VaryListLen-eps-converted-to.pdf, id=99, 251.94125pt x 181.67876pt>
 File: figures/Intersection-energy-VaryListLen-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-energy-VaryListLen-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-energy-VaryListLen-eps-converted-to.pdf used on input line 123.
+Package pdftex.def Info: figures/Intersection-energy-VaryListLen-eps-converted-to.pdf used on input line 137.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 116--126
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 130--140
  [] 
  []
 
+[7 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/timeBreakDownRegularSSD2-eps-converted-to.pdf> <C:/Users/Leno
+vo/Dropbox/ISC_WebSearch_SIGMOD15/figures/timeBreakDownSmartSSD-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSe
+arch_SIGMOD15/figures/timeBreakDownSmartSSD.pdf>]
 File: figures/banner2.pdf Graphic file (type pdf)
-<use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 141.
+ <use figures/banner2.pdf>
+Package pdftex.def Info: figures/banner2.pdf used on input line 156.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
-Package epstopdf Info: Source file: <figures/Intersection-time-VaryListSkew2.eps>
-(epstopdf)                    date: 2014-10-20 16:32:49
-(epstopdf)                    size: 19596 bytes
-(epstopdf)             Output file: <figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-28 19:52:25
-(epstopdf)                    size: 3394 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf figures
-/Intersection-time-VaryListSkew2.eps>
-(epstopdf)             \includegraphics on input line 148.
-Package epstopdf Info: Output file is already uptodate.
 
-<figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf, id=102, 251.94125pt x 181.67876pt>
+<figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf, id=123, 251.94125pt x 181.67876pt>
 File: figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf used on input line 148.
+Package pdftex.def Info: figures/Intersection-time-VaryListSkew2-eps-converted-to.pdf used on input line 163.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
-Package epstopdf Info: Source file: <figures/Intersection-energy-VaryListSkew2.eps>
-(epstopdf)                    date: 2014-10-20 16:32:47
-(epstopdf)                    size: 19253 bytes
-(epstopdf)             Output file: <figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-28 19:52:25
-(epstopdf)                    size: 3355 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf figur
-es/Intersection-energy-VaryListSkew2.eps>
-(epstopdf)             \includegraphics on input line 149.
-Package epstopdf Info: Output file is already uptodate.
 
-<figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf, id=103, 251.94125pt x 181.67876pt>
+<figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf, id=124, 251.94125pt x 181.67876pt>
 File: figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf used on input line 149.
+Package pdftex.def Info: figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf used on input line 164.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 147--152
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 162--167
  [][] 
  []
 
 
-Underfull \vbox (badness 1264) has occurred while \output is active []
-
- [7 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/timeBreakDownRegSmart.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/fig
-ures/timeBreakDownSmartSSD.pdf
-
-pdfTeX warning: pdflatex.exe (file C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/timeBreakDownSmartSSD.pdf): PDF inclusi
-on: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (6.0273pt too wide) in paragraph at lines 162--169
+Overfull \hbox (21.13863pt too wide) in paragraph at lines 177--184
  [][] 
  []
 
 File: figures/banner2.pdf Graphic file (type pdf)
 <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 186.
+Package pdftex.def Info: figures/banner2.pdf used on input line 201.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/Intersection-time-VaryInterRatio.eps>
-(epstopdf)                    date: 2014-10-30 15:34:29
+(epstopdf)                    date: 2014-10-30 14:34:28
 (epstopdf)                    size: 19443 bytes
 (epstopdf)             Output file: <figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:34:47
+(epstopdf)                    date: 2014-10-30 14:34:46
 (epstopdf)                    size: 3384 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf figure
 s/Intersection-time-VaryInterRatio.eps>
-(epstopdf)             \includegraphics on input line 191.
+(epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf, id=125, 251.94125pt x 181.67876pt>
 File: figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf used on input line 191.
+Package pdftex.def Info: figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf used on input line 206.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/Intersection-energy-VaryInterRatio.eps>
-(epstopdf)                    date: 2014-10-30 15:36:18
+(epstopdf)                    date: 2014-10-30 14:36:18
 (epstopdf)                    size: 19944 bytes
 (epstopdf)             Output file: <figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:36:39
+(epstopdf)                    date: 2014-10-30 14:36:38
 (epstopdf)                    size: 3378 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf figu
 res/Intersection-energy-VaryInterRatio.eps>
-(epstopdf)             \includegraphics on input line 192.
+(epstopdf)             \includegraphics on input line 207.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf, id=126, 251.94125pt x 181.67876pt>
 File: figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf used on input line 192.
+Package pdftex.def Info: figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf used on input line 207.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 185--195
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 200--210
  [] 
  []
 
 File: figures/banner2.pdf Graphic file (type pdf)
 <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 205.
+Package pdftex.def Info: figures/banner2.pdf used on input line 220.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/Intersection-time-VaryInterRatio-equal2.eps>
-(epstopdf)                    date: 2014-10-20 16:25:43
+(epstopdf)                    date: 2014-10-20 15:25:42
 (epstopdf)                    size: 19622 bytes
 (epstopdf)             Output file: <figures/Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-28 19:52:25
+(epstopdf)                    date: 2014-10-20 15:26:34
 (epstopdf)                    size: 3416 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf
  figures/Intersection-time-VaryInterRatio-equal2.eps>
-(epstopdf)             \includegraphics on input line 210.
+(epstopdf)             \includegraphics on input line 225.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf, id=127, 251.94125pt x 181.67876pt>
 File: figures/Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf used on input line 210.
+Package pdftex.def Info: figures/Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf used on input line 225.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/Intersection-energy-VaryInterRatio-equal2.eps>
-(epstopdf)                    date: 2014-10-20 16:26:09
+(epstopdf)                    date: 2014-10-20 15:26:08
 (epstopdf)                    size: 19730 bytes
 (epstopdf)             Output file: <figures/Intersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-28 19:52:25
+(epstopdf)                    date: 2014-10-20 15:26:34
 (epstopdf)                    size: 3386 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Intersection-energy-VaryInterRatio-equal2-eps-converted-to.p
 df figures/Intersection-energy-VaryInterRatio-equal2.eps>
-(epstopdf)             \includegraphics on input line 211.
+(epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Intersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf, id=128, 251.94125pt x 181.67876pt>
 File: figures/Intersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf used on input line 211.
+Package pdftex.def Info: figures/Intersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf used on input line 226.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 204--214
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 219--229
  [] 
  []
 
 File: figures/banner2.pdf Graphic file (type pdf)
 <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 247.
+Package pdftex.def Info: figures/banner2.pdf used on input line 263.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/Intersection-time-VaryNumLists.eps>
-(epstopdf)                    date: 2014-10-30 15:38:49
+(epstopdf)                    date: 2014-10-30 14:38:48
 (epstopdf)                    size: 20346 bytes
 (epstopdf)             Output file: <figures/Intersection-time-VaryNumLists-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:38:58
+(epstopdf)                    date: 2014-10-30 14:38:58
 (epstopdf)                    size: 3481 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Intersection-time-VaryNumLists-eps-converted-to.pdf figures/
 Intersection-time-VaryNumLists.eps>
-(epstopdf)             \includegraphics on input line 252.
+(epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Intersection-time-VaryNumLists-eps-converted-to.pdf, id=129, 251.94125pt x 181.67876pt>
 File: figures/Intersection-time-VaryNumLists-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-time-VaryNumLists-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-time-VaryNumLists-eps-converted-to.pdf used on input line 252.
+Package pdftex.def Info: figures/Intersection-time-VaryNumLists-eps-converted-to.pdf used on input line 268.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/Intersection-energy-VaryNumLists.eps>
-(epstopdf)                    date: 2014-10-30 15:40:41
+(epstopdf)                    date: 2014-10-30 14:40:40
 (epstopdf)                    size: 20000 bytes
 (epstopdf)             Output file: <figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:40:51
+(epstopdf)                    date: 2014-10-30 14:40:50
 (epstopdf)                    size: 3445 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf figure
 s/Intersection-energy-VaryNumLists.eps>
-(epstopdf)             \includegraphics on input line 253.
+(epstopdf)             \includegraphics on input line 269.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf, id=130, 251.94125pt x 181.67876pt>
 File: figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf used on input line 253.
+Package pdftex.def Info: figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf used on input line 269.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 246--256
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 262--272
  [] 
  []
 
-[8 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/banner2.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Intersecti
-on-time-VaryListLen-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Intersection-energy-VaryListLen
--eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Intersection-time-VaryListSkew2-eps-converted-to.p
-df> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Intersection-energy-VaryListSkew2-eps-converted-to.pdf> <C:/Users/Len
-ovo/Dropbox/ISC_WebSearch/figures/Intersection-time-VaryInterRatio-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_We
-bSearch/figures/Intersection-energy-VaryInterRatio-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/
-Intersection-time-VaryInterRatio-equal2-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Intersectio
-n-energy-VaryInterRatio-equal2-eps-converted-to.pdf>]
+[8 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/banner2.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/
+figures/Intersection-time-VaryListLen-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Inte
+rsection-energy-VaryListLen-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-t
+ime-VaryListSkew2-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-energy-Vary
+ListSkew2-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-time-VaryInterRatio
+-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-energy-VaryInterRatio-eps-co
+nverted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-time-VaryInterRatio-equal2-eps-conv
+erted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-energy-VaryInterRatio-equal2-eps-conv
+erted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-time-VaryNumLists-eps-converted-to.pd
+f> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf>]
+Overfull \hbox (4.50963pt too wide) in paragraph at lines 279--280
+\T1/ptm/m/n/9 Fig-ure 5[]) to Smart SSDs. Com-pared to the of-fload-ing of intersection-
+ []
+
 File: figures/banner2.pdf Graphic file (type pdf)
- <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 302.
+<use figures/banner2.pdf>
+Package pdftex.def Info: figures/banner2.pdf used on input line 322.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/RankIntersection-time-VaryInterRatio-equal2.eps>
-(epstopdf)                    date: 2014-10-20 20:46:16
+(epstopdf)                    date: 2014-10-20 19:46:16
 (epstopdf)                    size: 19630 bytes
 (epstopdf)             Output file: <figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-28 19:52:25
+(epstopdf)                    date: 2014-10-20 19:46:32
 (epstopdf)                    size: 3424 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to
 .pdf figures/RankIntersection-time-VaryInterRatio-equal2.eps>
-(epstopdf)             \includegraphics on input line 307.
+(epstopdf)             \includegraphics on input line 327.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf, id=172, 251.94125pt x 181.67876pt>
+<figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf, id=180, 251.94125pt x 181.67876pt>
 File: figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf>
-Package pdftex.def Info: figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf used on input line 307
+Package pdftex.def Info: figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf used on input line 327
 .
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/RankIntersection-energy-VaryInterRatio-equal2.eps>
-(epstopdf)                    date: 2014-10-20 20:45:54
+(epstopdf)                    date: 2014-10-20 19:45:54
 (epstopdf)                    size: 19346 bytes
 (epstopdf)             Output file: <figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-28 19:52:25
+(epstopdf)                    date: 2014-10-20 19:46:32
 (epstopdf)                    size: 3394 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-
 to.pdf figures/RankIntersection-energy-VaryInterRatio-equal2.eps>
-(epstopdf)             \includegraphics on input line 308.
+(epstopdf)             \includegraphics on input line 328.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf, id=173, 251.94125pt x 181.67876pt>
+<figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf, id=181, 251.94125pt x 181.67876pt>
 File: figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf used on input line 3
-08.
+28.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 301--311
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 321--331
  [] 
  []
 
 File: figures/banner2.pdf Graphic file (type pdf)
 <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 348.
+Package pdftex.def Info: figures/banner2.pdf used on input line 368.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/Difference-time-VaryListLen.eps>
-(epstopdf)                    date: 2014-10-30 15:42:13
+(epstopdf)                    date: 2014-10-30 14:42:12
 (epstopdf)                    size: 19413 bytes
 (epstopdf)             Output file: <figures/Difference-time-VaryListLen-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:43:24
+(epstopdf)                    date: 2014-10-30 14:43:24
 (epstopdf)                    size: 3374 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Difference-time-VaryListLen-eps-converted-to.pdf figures/Dif
 ference-time-VaryListLen.eps>
-(epstopdf)             \includegraphics on input line 353.
+(epstopdf)             \includegraphics on input line 373.
 Package epstopdf Info: Output file is already uptodate.
- <figures/Difference-time-VaryListLen-eps-converted-to.pdf, id=174, 251.94125pt x 181.67876pt>
+ <figures/Difference-time-VaryListLen-eps-converted-to.pdf, id=182, 251.94125pt x 181.67876pt>
 File: figures/Difference-time-VaryListLen-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Difference-time-VaryListLen-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Difference-time-VaryListLen-eps-converted-to.pdf used on input line 353.
+Package pdftex.def Info: figures/Difference-time-VaryListLen-eps-converted-to.pdf used on input line 373.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/Difference-energy-VaryListLen.eps>
-(epstopdf)                    date: 2014-10-30 15:43:14
+(epstopdf)                    date: 2014-10-30 14:43:14
 (epstopdf)                    size: 19934 bytes
 (epstopdf)             Output file: <figures/Difference-energy-VaryListLen-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:43:24
+(epstopdf)                    date: 2014-10-30 14:43:24
 (epstopdf)                    size: 3336 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Difference-energy-VaryListLen-eps-converted-to.pdf figures/D
 ifference-energy-VaryListLen.eps>
-(epstopdf)             \includegraphics on input line 354.
+(epstopdf)             \includegraphics on input line 374.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/Difference-energy-VaryListLen-eps-converted-to.pdf, id=175, 251.94125pt x 181.67876pt>
+<figures/Difference-energy-VaryListLen-eps-converted-to.pdf, id=183, 251.94125pt x 181.67876pt>
 File: figures/Difference-energy-VaryListLen-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Difference-energy-VaryListLen-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Difference-energy-VaryListLen-eps-converted-to.pdf used on input line 354.
+Package pdftex.def Info: figures/Difference-energy-VaryListLen-eps-converted-to.pdf used on input line 374.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 347--357
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 367--377
  [] 
  []
 
-[9 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Intersection-time-VaryNumLists-eps-converted-to.pdf> <C:/Users/Lenovo/
-Dropbox/ISC_WebSearch/figures/Intersection-energy-VaryNumLists-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSea
-rch/figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/fig
-ures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/
-Difference-time-VaryListLen-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Difference-energy-VaryL
-istLen-eps-converted-to.pdf>]
+[9 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/RankIntersection-time-VaryInterRatio-equal2-eps-converted-to.
+pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/RankIntersection-energy-VaryInterRatio-equal2-eps-converted
+-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Difference-time-VaryListLen-eps-converted-to.pdf> <C:/U
+sers/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Difference-energy-VaryListLen-eps-converted-to.pdf>]
 File: figures/banner2.pdf Graphic file (type pdf)
- <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 385.
+
+<use figures/banner2.pdf>
+Package pdftex.def Info: figures/banner2.pdf used on input line 403.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/Difference-time-VaryListSkew.eps>
-(epstopdf)                    date: 2014-10-30 15:51:56
+(epstopdf)                    date: 2014-10-30 14:51:56
 (epstopdf)                    size: 19730 bytes
 (epstopdf)             Output file: <figures/Difference-time-VaryListSkew-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:53:20
+(epstopdf)                    date: 2014-10-30 14:53:20
 (epstopdf)                    size: 3407 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Difference-time-VaryListSkew-eps-converted-to.pdf figures/Di
 fference-time-VaryListSkew.eps>
-(epstopdf)             \includegraphics on input line 392.
+(epstopdf)             \includegraphics on input line 410.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Difference-time-VaryListSkew-eps-converted-to.pdf, id=203, 251.94125pt x 181.67876pt>
 File: figures/Difference-time-VaryListSkew-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Difference-time-VaryListSkew-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Difference-time-VaryListSkew-eps-converted-to.pdf used on input line 392.
+Package pdftex.def Info: figures/Difference-time-VaryListSkew-eps-converted-to.pdf used on input line 410.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/Difference-energy-VaryListSkew.eps>
-(epstopdf)                    date: 2014-10-30 15:53:11
+(epstopdf)                    date: 2014-10-30 14:53:10
 (epstopdf)                    size: 19621 bytes
 (epstopdf)             Output file: <figures/Difference-energy-VaryListSkew-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 15:53:21
+(epstopdf)                    date: 2014-10-30 14:53:20
 (epstopdf)                    size: 3394 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Difference-energy-VaryListSkew-eps-converted-to.pdf figures/
 Difference-energy-VaryListSkew.eps>
-(epstopdf)             \includegraphics on input line 393.
+(epstopdf)             \includegraphics on input line 411.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Difference-energy-VaryListSkew-eps-converted-to.pdf, id=204, 251.94125pt x 181.67876pt>
 File: figures/Difference-energy-VaryListSkew-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Difference-energy-VaryListSkew-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Difference-energy-VaryListSkew-eps-converted-to.pdf used on input line 393.
+Package pdftex.def Info: figures/Difference-energy-VaryListSkew-eps-converted-to.pdf used on input line 411.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 391--396
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 409--414
  [][] 
  []
 
 File: figures/banner2.pdf Graphic file (type pdf)
 <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 445.
+Package pdftex.def Info: figures/banner2.pdf used on input line 464.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/Difference-time-VaryInterRatio-equal.eps>
-(epstopdf)                    date: 2014-10-31 10:59:55
+(epstopdf)                    date: 2014-10-31 09:59:54
 (epstopdf)                    size: 19564 bytes
 (epstopdf)             Output file: <figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-31 11:01:14
+(epstopdf)                    date: 2014-10-31 10:01:14
 (epstopdf)                    size: 3414 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf fi
 gures/Difference-time-VaryInterRatio-equal.eps>
-(epstopdf)             \includegraphics on input line 450.
+(epstopdf)             \includegraphics on input line 469.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf, id=205, 251.94125pt x 181.67876pt>
 File: figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf used on input line 450.
+Package pdftex.def Info: figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf used on input line 469.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/Difference-energy-VaryInterRatio-equal.eps>
-(epstopdf)                    date: 2014-10-31 11:01:03
+(epstopdf)                    date: 2014-10-31 10:01:02
 (epstopdf)                    size: 19332 bytes
 (epstopdf)             Output file: <figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-31 11:01:15
+(epstopdf)                    date: 2014-10-31 10:01:14
 (epstopdf)                    size: 3379 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf 
 figures/Difference-energy-VaryInterRatio-equal.eps>
-(epstopdf)             \includegraphics on input line 451.
+(epstopdf)             \includegraphics on input line 470.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf, id=206, 251.94125pt x 181.67876pt>
 File: figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf>
-Package pdftex.def Info: figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf used on input line 451.
+Package pdftex.def Info: figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf used on input line 470.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 444--454
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 463--473
  [] 
  []
 
 File: figures/banner2.pdf Graphic file (type pdf)
 <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 495.
+Package pdftex.def Info: figures/banner2.pdf used on input line 514.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/RankDifference-time-VaryListSkew.eps>
-(epstopdf)                    date: 2014-10-30 16:01:08
+(epstopdf)                    date: 2014-10-30 15:01:08
 (epstopdf)                    size: 19686 bytes
 (epstopdf)             Output file: <figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 16:02:17
+(epstopdf)                    date: 2014-10-30 15:02:16
 (epstopdf)                    size: 3416 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf figure
 s/RankDifference-time-VaryListSkew.eps>
-(epstopdf)             \includegraphics on input line 502.
+(epstopdf)             \includegraphics on input line 521.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf, id=207, 251.94125pt x 181.67876pt>
 File: figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf>
-Package pdftex.def Info: figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf used on input line 502.
+Package pdftex.def Info: figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf used on input line 521.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/RankDifference-energy-VaryListSkew.eps>
-(epstopdf)                    date: 2014-10-30 16:02:08
+(epstopdf)                    date: 2014-10-30 15:02:08
 (epstopdf)                    size: 20086 bytes
 (epstopdf)             Output file: <figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 16:02:17
+(epstopdf)                    date: 2014-10-30 15:02:16
 (epstopdf)                    size: 3401 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf figu
 res/RankDifference-energy-VaryListSkew.eps>
-(epstopdf)             \includegraphics on input line 503.
+(epstopdf)             \includegraphics on input line 522.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf, id=208, 251.94125pt x 181.67876pt>
 File: figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf>
-Package pdftex.def Info: figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf used on input line 503.
+Package pdftex.def Info: figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf used on input line 522.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 501--506
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 520--525
  [][] 
  []
 
 File: figures/banner2.pdf Graphic file (type pdf)
 <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 528.
+Package pdftex.def Info: figures/banner2.pdf used on input line 547.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/RankDifference-time-VaryInterRatio-equal.eps>
-(epstopdf)                    date: 2014-10-31 11:06:27
+(epstopdf)                    date: 2014-10-31 10:06:26
 (epstopdf)                    size: 19572 bytes
 (epstopdf)             Output file: <figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-31 11:07:56
+(epstopdf)                    date: 2014-10-31 10:07:56
 (epstopdf)                    size: 3417 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pd
 f figures/RankDifference-time-VaryInterRatio-equal.eps>
-(epstopdf)             \includegraphics on input line 533.
+(epstopdf)             \includegraphics on input line 552.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pdf, id=209, 251.94125pt x 181.67876pt>
 File: figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pdf>
-Package pdftex.def Info: figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pdf used on input line 533.
+Package pdftex.def Info: figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pdf used on input line 552.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/RankDifference-energy-VaryInterRatio-equal.eps>
-(epstopdf)                    date: 2014-10-31 11:07:42
+(epstopdf)                    date: 2014-10-31 10:07:42
 (epstopdf)                    size: 19340 bytes
 (epstopdf)             Output file: <figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-31 11:07:56
+(epstopdf)                    date: 2014-10-31 10:07:56
 (epstopdf)                    size: 3388 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.
 pdf figures/RankDifference-energy-VaryInterRatio-equal.eps>
-(epstopdf)             \includegraphics on input line 534.
+(epstopdf)             \includegraphics on input line 553.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.pdf, id=210, 251.94125pt x 181.67876pt>
 File: figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.pdf>
-Package pdftex.def Info: figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.pdf used on input line 534.
+Package pdftex.def Info: figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.pdf used on input line 553.
 
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 527--537
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 546--556
  [] 
  []
 
-[10 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Difference-time-VaryListSkew-eps-converted-to.pdf> <C:/Users/Lenovo/D
-ropbox/ISC_WebSearch/figures/Difference-energy-VaryListSkew-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch
-/figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/Diffe
-rence-energy-VaryInterRatio-equal-eps-converted-to.pdf>]
+[10 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Difference-time-VaryListSkew-eps-converted-to.pdf> <C:/Users
+/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/Difference-energy-VaryListSkew-eps-converted-to.pdf> <C:/Users/Lenovo/Dro
+pbox/ISC_WebSearch_SIGMOD15/figures/Difference-time-VaryInterRatio-equal-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/
+ISC_WebSearch_SIGMOD15/figures/Difference-energy-VaryInterRatio-equal-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC
+_WebSearch_SIGMOD15/figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearc
+h_SIGMOD15/figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf>]
 File: figures/banner2.pdf Graphic file (type pdf)
  <use figures/banner2.pdf>
-Package pdftex.def Info: figures/banner2.pdf used on input line 633.
+Package pdftex.def Info: figures/banner2.pdf used on input line 652.
 (pdftex.def)             Requested size: 124.80103pt x 8.68488pt.
 Package epstopdf Info: Source file: <figures/RankUnion-time-VaryNumLists.eps>
-(epstopdf)                    date: 2014-10-30 16:09:47
+(epstopdf)                    date: 2014-10-30 15:09:46
 (epstopdf)                    size: 20170 bytes
 (epstopdf)             Output file: <figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 16:10:32
+(epstopdf)                    date: 2014-10-30 15:10:32
 (epstopdf)                    size: 3478 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf figures/Ran
 kUnion-time-VaryNumLists.eps>
-(epstopdf)             \includegraphics on input line 638.
+(epstopdf)             \includegraphics on input line 657.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf, id=230, 251.94125pt x 181.67876pt>
+<figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf, id=238, 251.94125pt x 181.67876pt>
 File: figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf>
-Package pdftex.def Info: figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf used on input line 638.
+Package pdftex.def Info: figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf used on input line 657.
 (pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 Package epstopdf Info: Source file: <figures/RankUnion-energy-VaryNumLists.eps>
-(epstopdf)                    date: 2014-10-30 16:10:05
+(epstopdf)                    date: 2014-11-05 19:59:20
 (epstopdf)                    size: 20306 bytes
 (epstopdf)             Output file: <figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-10-30 16:10:33
-(epstopdf)                    size: 3498 bytes
+(epstopdf)                    date: 2014-11-05 19:59:30
+(epstopdf)                    size: 3494 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf figures/R
 ankUnion-energy-VaryNumLists.eps>
-(epstopdf)             \includegraphics on input line 639.
+(epstopdf)             \includegraphics on input line 658.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf, id=231, 251.94125pt x 176.66pt>
+<figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf, id=239, 251.94125pt x 181.67876pt>
 File: figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf>
-Package pdftex.def Info: figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf used on input line 639.
-(pdftex.def)             Requested size: 120.0pt x 84.1435pt.
+Package pdftex.def Info: figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf used on input line 658.
+(pdftex.def)             Requested size: 120.0pt x 86.53394pt.
 
-Overfull \hbox (1.13812pt too wide) in paragraph at lines 632--642
+Overfull \hbox (1.13812pt too wide) in paragraph at lines 651--661
  [] 
  []
 
-
-Overfull \hbox (3.11926pt too wide) in paragraph at lines 647--647
-[]\subsecfnt Discussion: Call for Al-go-rith-mic Op-ti-miza-tions 
+) (C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\relatedWorks.tex
+Overfull \hbox (1.44066pt too wide) in paragraph at lines 10--14
+\T1/ptm/m/n/9 Ohio State Data Base Com-puter (DBC) [20] fol-lowed the processor-
  []
 
-) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\relatedWorks.tex
-Overfull \hbox (10.91788pt too wide) in paragraph at lines 5--6
-\T1/ptm/m/n/9 track. The Ohio State Data Base Com-puter (DBC) [19] and SURE [23]
+
+Overfull \hbox (12.41997pt too wide) in paragraph at lines 10--14
+\T1/ptm/m/n/9 per-head ar-chi-tec-ture to as-so-ciate pro-cess-ing logic with each read/write
  []
 
-[11 <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/RankDifference-time-VaryListSkew-eps-converted-to.pdf> <C:/Users/Leno
-vo/Dropbox/ISC_WebSearch/figures/RankDifference-energy-VaryListSkew-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_W
-ebSearch/figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/f
-igures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/R
-ankUnion-time-VaryNumLists-eps-converted-to.pdf> <C:/Users/Lenovo/Dropbox/ISC_WebSearch/figures/RankUnion-energy-VaryNum
-Lists-eps-converted-to.pdf>]) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\conclusion.tex
-Overfull \hbox (5.19395pt too wide) in paragraph at lines 3--7
+) (C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\conclusion.tex
+Overfull \hbox (5.19395pt too wide) in paragraph at lines 4--8
 \T1/ptm/m/n/9 ranked and ranked ver-sion) can be cost-effectively of-floaded to Smart
  []
 
-) (C:\Users\Lenovo\Dropbox\ISC_WebSearch\texfooter.tex (C:\Users\Lenovo\Dropbox\ISC_WebSearch\ISC_WebSearch.bbl
+[11 <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/RankDifference-time-VaryInterRatio-equal-eps-converted-to.pd
+f> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/RankDifference-energy-VaryInterRatio-equal-eps-converted-to.p
+df> <C:/Users/Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/RankUnion-time-VaryNumLists-eps-converted-to.pdf> <C:/Users/
+Lenovo/Dropbox/ISC_WebSearch_SIGMOD15/figures/RankUnion-energy-VaryNumLists-eps-converted-to.pdf>])
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\texfooter.tex
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\ISC_WebSearch_SIGMOD15.bbl)
+Overfull \vbox (0.99593pt too high) has occurred while \output is active []
 
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[12])
-Overfull \vbox (1.15396pt too high) has occurred while \output is active []
-
- [13]
-(C:\Users\Lenovo\Dropbox\ISC_WebSearch\ISC_WebSearch.aux)
+ [12]
+(C:\Users\Lenovo\Dropbox\ISC_WebSearch_SIGMOD15\ISC_WebSearch_SIGMOD15.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 5397 strings out of 493921
- 80373 string characters out of 3147278
- 160218 words of memory out of 3000000
- 8475 multiletter control sequences out of 15000+200000
- 76733 words of font info for 91 fonts, out of 3000000 for 9000
+ 6490 strings out of 493921
+ 101166 string characters out of 3147278
+ 204028 words of memory out of 3000000
+ 9559 multiletter control sequences out of 15000+200000
+ 73717 words of font info for 89 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 44i,15n,29p,1426b,468s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,15n,38p,1435b,495s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cmextra/cmex9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
@@ -1152,12 +1192,11 @@ ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on ISC_WebSearch.pdf (13 pages, 990217 bytes).
+ 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on ISC_WebSearch_SIGMOD15.pdf (12 pages, 966386 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
+ 325 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

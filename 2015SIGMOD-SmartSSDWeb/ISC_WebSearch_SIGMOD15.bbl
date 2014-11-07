@@ -5,11 +5,6 @@ A.~Acharya, M.~Uysal, and J.~Saltz.
 \newblock Active disks: Programming model, algorithms and evaluation.
 \newblock In {\em ASPLOS}, pages 81--91, 1998.
 
-\bibitem{AthanassoulisACGS10}
-M.~Athanassoulis, A.~Ailamaki, S.~Chen, P.~B. Gibbons, and R.~Stoica.
-\newblock Flash in a {DBMS:} where and how?
-\newblock {\em {IEEE} Data Eng. Bull.}, 33(4):28--34, 2010.
-
 \bibitem{BaeKKOP13}
 D.~Bae, J.~Kim, S.~Kim, H.~Oh, and C.~Park.
 \newblock Intelligent {SSD:} a turbo for big data mining.
@@ -27,6 +22,11 @@ R.~Balasubramonian, J.~Chang, T.~Manning, J.~H. Moreno, R.~Murphy, R.~Nair, and
 \newblock Near-data processing: Insights from a micro-46 workshop.
 \newblock {\em Micro, IEEE}, 34(4):36--42, 2014.
 
+\bibitem{Barroso2003WSP}
+L.~A. Barroso, J.~Dean, and U.~H\"{o}lzle.
+\newblock Web search for a planet: The google cluster architecture.
+\newblock {\em IEEE Micro}, 23:22--28, 2003.
+
 \bibitem{Broder2003EQE}
 A.~Z. Broder, D.~Carmel, M.~Herscovici, A.~Soffer, and J.~Zien.
 \newblock Efficient query evaluation using a two-level retrieval process.
@@ -43,6 +43,11 @@ A.~M. Caulfield, A.~De, J.~Coburn, T.~I. Mollow, R.~K. Gupta, and S.~Swanson.
   next-generation, non-volatile memories.
 \newblock In {\em MICRO}, pages 385--395, 2010.
 
+\bibitem{Chen2011PCM}
+S.~Chen, P.~B. Gibbons, and S.~Nath.
+\newblock Rethinking database algorithms for phase change memory.
+\newblock In {\em CIDR}, 2011.
+
 \bibitem{Chung2009SFT}
 T.-S. Chung, D.-J. Park, S.~Park, D.-H. Lee, S.-W. Lee, and H.-J. Song.
 \newblock A survey of flash translation layer.
@@ -58,11 +63,6 @@ E.~D. Demaine, A.~L\'{o}pez-Ortiz, and J.~I. Munro.
 \newblock Adaptive set intersections, unions, and differences.
 \newblock In {\em SODA}, pages 743--752, 2000.
 
-\bibitem{DLMI01}
-E.~D. Demaine, A.~L\'{o}pez-Ortiz, and J.~I. Munro.
-\newblock Experiments on adaptive set intersections for text retrieval systems.
-\newblock In {\em ALENEX}, pages 91--104, 2001.
-
 \bibitem{Ding2011}
 B.~Ding and A.~C. K\"{o}nig.
 \newblock Fast set intersection in memory.
@@ -73,11 +73,6 @@ J.~Do, Y.-S. Kee, J.~M. Patel, C.~Park, K.~Park, and D.~J. DeWitt.
 \newblock Query processing on smart ssds: Opportunities and challenges.
 \newblock In {\em SIGMOD}, pages 1221--1230, 2013.
 
-\bibitem{Do2011TDB}
-J.~Do, D.~Zhang, J.~M. Patel, D.~J. DeWitt, J.~F. Naughton, and A.~Halverson.
-\newblock Turbocharging dbms buffer pool using ssds.
-\newblock In {\em SIGMOD}, pages 1113--1124, 2011.
-
 \bibitem{Fagin2001}
 R.~Fagin, A.~Lotem, and M.~Naor.
 \newblock Optimal aggregation algorithms for middleware.
@@ -87,6 +82,17 @@ R.~Fagin, A.~Lotem, and M.~Naor.
 H.~Garcia-Molina, J.~D. Ullman, and J.~Widom.
 \newblock {\em Database Systems: The Complete Book}.
 \newblock Prentice Hall Press, 2008.
+
+\bibitem{Graefe2009}
+G.~Graefe.
+\newblock The five-minute rule 20 years later (and how flash memory changes the
+  rules).
+\newblock {\em CACM}, 52:48--59, 2009.
+
+\bibitem{Hennessy2006}
+J.~L. Hennessy and D.~A. Patterson.
+\newblock {\em Computer Architecture: A Quantitative Approach}.
+\newblock 2006.
 
 \bibitem{Julich13}
 {J\"{u}lich Research Center}.
@@ -116,20 +122,21 @@ Y.-S. Lee, L.~C. Quero, Y.~Lee, J.-S. Kim, and S.~Maeng.
   ssds.
 \newblock In {\em HotStorage}, 2014.
 
-\bibitem{LeilichSZ78}
-H.~Leilich, G.~Stiege, and H.~C. Zeidler.
-\newblock A search processor for data base management systems.
-\newblock In {\em VLDB}, pages 280--287, 1978.
-
-\bibitem{Li2010TIS}
-Y.~Li, B.~He, R.~J. Yang, Q.~Luo, and K.~Yi.
-\newblock Tree indexing on solid state drives.
-\newblock {\em Proc. VLDB Endow.}, 3(1-2):1195--1206, 2010.
+\bibitem{Ruixuan2011}
+R.~Li, X.~Chen, C.~Li, X.~Gu, and K.~Wen.
+\newblock Efficient online index maintenance for ssd-based information
+  retrieval systems.
+\newblock In {\em HPCC}, pages 262--269, 2012.
 
 \bibitem{Hien2013}
 H.~Luu and R.~Rangaswamy.
 \newblock How lucene powers the linkedin segmentation and targeting platform.
 \newblock Lucene/SOLR Revolution, 2013.
+
+\bibitem{Ruyue2010}
+R.~Ma.
+\newblock Baidu distributed database.
+\newblock In {\em System Architect Conference China}, 2010.
 
 \bibitem{M08}
 C.~D. Manning, P.~Raghavan, and H.~Schtze.
@@ -140,15 +147,10 @@ C.~D. Manning, P.~Raghavan, and H.~Schtze.
 {Oracle Corporation}.
 \newblock Oracle exadata white paper, 2010.
 
-\bibitem{Ozkarahan1977}
-E.~A. Ozkarahan, S.~A. Schuster, and K.~C. Sevcik.
-\newblock Performance evaluation of a relational associative processor.
-\newblock {\em ACM Trans. Database Syst.}, 2(2):175--195, 1977.
-
-\bibitem{Pugh1990}
-W.~Pugh.
-\newblock Skip lists: A probabilistic alternative to balanced trees.
-\newblock {\em Commun. ACM}, 33(6):668--676, 1990.
+\bibitem{Ouyang2014SSF}
+J.~Ouyang, S.~Lin, S.~Jiang, Z.~Hou, Y.~Wang, and Y.~Wang.
+\newblock Sdf: Software-defined flash for web-scale internet storage systems.
+\newblock In {\em ASPLOS}, pages 471--484, 2014.
 
 \bibitem{Riedel1998ASL}
 E.~Riedel, G.~A. Gibson, and C.~Faloutsos.
@@ -160,6 +162,17 @@ S.~E. Robertson and S.~Walker.
 \newblock Some simple effective approximations to the 2-poisson model for
   probabilistic weighted retrieval.
 \newblock In {\em SIGIR}, pages 232--241, 1994.
+
+\bibitem{Schurman09}
+E.~Schurman and J.~Brutlag.
+\newblock Performance related changes and their user impact.
+\newblock Velocity, 2009.
+
+\bibitem{Sudharsan14}
+S.~Seshadri, M.~Gahagan, S.~Bhaskaran, T.~Bunker, A.~De, Y.~Jin, Y.~Liu, and
+  S.~Swanson.
+\newblock Willow: A user-programmable ssd.
+\newblock In {\em OSDI}, pages 67--80, 2014.
 
 \bibitem{Singhal01}
 A.~Singhal.
@@ -176,6 +189,17 @@ S.~Y.~W. Su and G.~J. Lipovski.
 \newblock Teradata extreme performance alliance.
 \newblock \url{http://www.teradata.com/t/extreme-performance-appliance}.
 
+\bibitem{Tong2013}
+J.~Tong, G.~Wang, and X.~Liu.
+\newblock Latency-aware strategy for static list caching in flash-based web
+  search engines.
+\newblock In {\em CIKM}, pages 1209--1212, 2013.
+
+\bibitem{Wang2013ISS}
+J.~Wang, E.~Lo, M.~L. Yiu, J.~Tong, G.~Wang, and X.~Liu.
+\newblock The impact of solid state drive on search engine cache management.
+\newblock In {\em SIGIR}, pages 693--702, 2013.
+
 \bibitem{WoodsIA14}
 L.~Woods, Z.~Istv{\'{a}}n, and G.~Alonso.
 \newblock Ibex - an intelligent storage engine with support for advanced {SQL}
@@ -185,6 +209,6 @@ L.~Woods, Z.~Istv{\'{a}}n, and G.~Alonso.
 \bibitem{ZM06}
 J.~Zobel and A.~Moffat.
 \newblock Inverted files for text search engines.
-\newblock {\em CSUR}, 38, 2006.
+\newblock {\em CSUR}, 38:1--56, 2006.
 
 \end{thebibliography}

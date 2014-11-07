@@ -1,39 +1,37 @@
 
 \section{Implementation}\label{sec:implementation}
-This section describes the implementation details of offloading the query operations into Smart SSDs. We discuss the implementation of intersection in Section~\ref{sec:intersection}, union in Section~\ref{sec:union} and difference in Section~\ref{sec:difference}. Finally, we discuss the implementation of ranking in Section~\ref{sec:ranked}.
+This section describes the implementation details of offloading the query operations into Smart SSDs. We discuss the implementation of intersection in Section~\ref{sec:intersection}, union in Section~\ref{sec:union}, and difference in Section~\ref{sec:difference}. Finally, we discuss the implementation of ranking in Section~\ref{sec:ranked}.
 
-\textbf{Inverted index format}. 
-Inverted index is a fundamental data structure in Lucene as well as in other search engines.
+\textbf{Inverted index format}.
+Inverted index is a fundamental data structure in Lucene as well as other search engines.
 It is essentially a mapping data structure between query terms and inverted lists.
-Each inverted list contains a list of documents (document IDs) containing the query term. 
+Each inverted list includes a list of documents (document IDs) containing the query term.
 In Lucene, each entry in the inverted list consists of a document ID, document frequency, and positional information (variable-length) to support ranking and more complex queries.
 
-In this work, we made some changes which are equally applied to Lucene running on both regular SSDs and Smart SSDs for fairness. (1) Instead of storing the document frequency in Lucene, we store the actual score according to Lucene's ranking model. We explain more detail in Section~\ref{sec:ranked}. This improves the ranking performance for Lucene on both regular SSDs and Smart SSDs.
-(2) Instead of storing positional information as variable-length entries in Lucene, we store it as fixed-length entries. Each entry takes 16 bytes (i.e., four integers). We choose it based on our empirical research statistics. The fixed-length entry allows us to use binary search for skipping. Otherwise, we need to build some auxiliary data structures such as skip list~\cite{Pugh1990} in Lucene. We believe this change will not affect the system performance much because both data structures support an element search in a logarithmic cost.
+In this work, we made the following changes to the inverted index such that Smart SSDs (as well as regulars SSDs) can access it efficiently. (1) Instead of storing the document frequency in Lucene, we store the actual score according to Lucene's ranking model. We explain more in Section~\ref{sec:ranked}. This improves the ranking performance for Lucene on both regular SSDs and Smart SSDs.
+(2) Instead of storing positional information as variable-length entries in Lucene, we store it as fixed-length entries. Each entry takes 16 bytes (i.e., four integers). We choose it based on our empirical research statistics. The fixed-length entry allows us to use binary search for skipping. Otherwise, we need to build some auxiliary data structures such as skip list in Lucene. We believe this change will not affect the system performance much because both data structures support element search in a logarithmic cost.
 (3) Instead of compressing the inverted index in Lucene, we consider the non-compressed inverted index.
-Thus, all the entries in every inverted list are sorted by document ID in an ascending order. 
-Although compressed lists can save a space, decompression also takes considerable time especially for Smart SSDs due to their hardware limitations. Note that this hardware limitation can be overcome by the vendor's hardware architecture improvement in the near future. So, we leave the compressed list operations to our future work.
-%Note that, we are improving the architecture of Smart SSDs (both hardware and software), so, we leave the compressed list operations to the future work.
-(4) Besides, every inverted list is stored on SSD in a page-aligned manner (page size 8KB). That is, it starts and ends at a multiple of page sizes. For example, if the size of an inverted list is 2000 bytes, the start offset can be 0 and the end offset is 8KB. The constraint is limited to the programming model of Smart SSDs because generally, there is no OS support inside SSDs. We note that this is true even on the host machines in order to bypass OS buffer (e.g., \verb"O_DIRECT" flag).
+Thus, all the entries in every inverted list are sorted by document ID in an ascending order.
+Although compressed lists can save some space, decompression also takes considerable time especially for Smart SSDs due to their hardware limitations. Note that this hardware limitation can be overcome by the vendor's hardware architecture improvement in the near future. So, we leave the compressed list operations to our future work.
+(4) Every inverted list is stored on SSDs in a page-aligned manner (page size 8 KB). That is, it starts and ends at an integer multiple of the page sizes. For example, if the size of an inverted list is 2000 bytes, the start offset can be 0 and the end offset is 8 KB. The constraint is limited to the programming model of Smart SSDs because generally, there is no OS support inside SSDs. We note that this is true even on the host machines in order to bypass OS buffer (e.g., \verb"O_DIRECT" flag).
 
 
 \subsection{Intersection}\label{sec:intersection}
-Suppose there are $u$ ($u>1$) inverted lists, i.e., $L_1$, $\cdots$, $L_u$, for intersection. Since these are initially stored on SSD flash chips, we need to load them to a device memory first. Then we apply an in-memory list intersection algorithm.
+Suppose there are $u$ ($u>1$) inverted lists (i.e., $L_1$, $\cdots$, $L_u$) for intersection. Since these are initially stored on SSD flash chips, we need to load them to the device memory first. Then we apply an in-memory list intersection algorithm.
 
-There are a number of in-memory list intersection algorithms such as sort-merge based algorithm~\cite{GarciaMolina2008}, skip list based algorithm~\cite{M08}, hash based algorithm, divide and conquer based algorithm~\cite{Baezayates05}, adaptive algorithm~\cite{Demaine2000ASI,DLMI01}, group based algorithm~\cite{Ding2011}. Among them, we implement the adaptive algorithm inside Smart SSDs for the following reasons: (1) Lucene uses the adaptive algorithm for list intersection. For a fair comparison, we also adopt it inside Smart SSDs. (2) The adaptive algorithm works well in theory and practice. According to a recent study in~\cite{Ding2011}, the performance of adaptive algorithm better than others except the group based algorithm. Although the group based algorithm~\cite{Ding2011} performs better, it requires too much memory for pre-computation. However, inside Smart SSDs, the memory size is limited.
-
+There are a number of in-memory list intersection algorithms such as sort-merge based algorithm~\cite{GarciaMolina2008}, skip list based algorithm~\cite{M08}, hash based algorithm, divide and conquer based algorithm~\cite{Baezayates05}, adaptive algorithm~\cite{Demaine2000ASI}, group based algorithm~\cite{Ding2011}. Among them, we implement the adaptive algorithm inside Smart SSDs for the following reasons: (1) Lucene uses the adaptive algorithm for list intersection. For a fair comparison, we also adopt it inside Smart SSDs. (2) The adaptive algorithm works well in theory and practice~\cite{Demaine2000ASI,Ding2011}. %According to a recent study in~\cite{Ding2011}, the adaptive algorithm outperforms others the group based algorithm. But the group based algorithm requires too much memory for pre-computation, which is not suitable for Smart SSDs, where the DRAM size is limited.
 
  \begin{algorithm}[tbp]\small
-load all the $u$ lists $L_1, L_2, \cdots, L_u$ from the SSD to device memory\nllabel{alg1:0} (assume $L_1[0] \le L_2[0] \le ... \le L_u[0]$)\\
+load all the $u$ lists $L_1, L_2, \cdots, L_u$ from the SSD to the device DRAM\nllabel{alg1:0} (assuming $L_1[0] \le L_2[0] \le ... \le L_u[0]$)\\
 %result set $R$ to be empty\\
 result set $R \leftarrow \varnothing$\\
 set $pivot$ to the first element of $L_u$ \nllabel{alg1:2}\\
 
- \Repeat( access the lists in cycle:){target $=$ \emph{INVALID}}{
+ \Repeat( access the lists in cycle:){pivot $=$ \emph{INVALID}}{
  let $L_i$ be the current list \nllabel{alg1:5}\\
  $\emph{successor} \leftarrow L_i.\texttt{next}(pivot)$ /*smallest element $\ge$ \emph{pivot}*/\nllabel{alg1:6}\\
     \If{$successor = pivot$}{
-        increase occurrence counter and insert $pivot$ to $R$ if the count reaches $u$\nllabel{alg1:8}
+        increase occurrence counter and insert $pivot$ to $R$ if the counter reaches $u$\nllabel{alg1:8}
     }\Else{
     $pivot \leftarrow successor$\nllabel{alg1:10}\\
     }
@@ -42,7 +40,7 @@ set $pivot$ to the first element of $L_u$ \nllabel{alg1:2}\\
  \caption{Adaptive intersection algorithm}\label{alg:AdaptiveIntersection}
  \end{algorithm}
 
-Algorithm~\ref{alg:AdaptiveIntersection} describes the adaptive algorithm~\cite{Demaine2000ASI,DLMI01}. Every time a \emph{pivot} value is selected (initially, it is set to the first element of $L_u$, see Line~\ref{alg1:2}). It is probed against the other lists in a round-robin fashion. Let $L_i$ be the current list where the {pivot} is probed on (line~\ref{alg1:5}). If \emph{pivot} is in $L_i$ (using binary search, line~\ref{alg1:6}), increase the counter for the {pivot} (line~\ref{alg1:8}); otherwise, update the {pivot} value to be the successor (line~\ref{alg1:10}). In either case, continue probing the next available list until the pivot is INVALID (meaning that at least one list is exhausted).
+Algorithm~\ref{alg:AdaptiveIntersection} describes the adaptive algorithm~\cite{Demaine2000ASI}. Every time a \emph{pivot} value is selected (initially, it is set to the first element of $L_u$, see Line~\ref{alg1:2}). It is probed against the other lists in a round-robin fashion. Let $L_i$ be the current list where the {pivot} is probed on (Line~\ref{alg1:5}). If a pivot is in $L_i$ (using binary search, Line~\ref{alg1:6}), increase the counter for the {pivot} (Line~\ref{alg1:8}); otherwise, update the {pivot} value to be the successor (Line~\ref{alg1:10}). In either case, continue probing the next available list until the pivot is INVALID (meaning that at least one list is exhausted).
 
 
 
@@ -64,13 +62,12 @@ Algorithm~\ref{alg:AdaptiveIntersection} describes the adaptive algorithm~\cite{
 %\end{tabular}
 %\end{table}
 
-\textbf{Switch between the adaptive algorithm and the sort-merge algorithm}. The performance of Algorithm~\ref{alg:AdaptiveIntersection} depends on how to find the successor of a pivot efficiently (Line~\ref{alg1:6}). We mainly use binary search in our implementation. However, when two lists are of similar sizes, linear search can be even faster than binary search~\cite{Ding2011}. Thus, in our implementation, if the size ratio of two lists is less than 4 (based on our empirical study), we use linear search to find the successor. In this case, the adaptive algorithm is switched to the sort-merge algorithm. For a fair comparison, we also modified Lucene codes to switch between the adaptive algorithm and the sort-merge algorithm if it runs on regular SSDs.
+\textbf{Switch between the adaptive algorithm and the sort-merge algorithm}. The performance of Algorithm~\ref{alg:AdaptiveIntersection} depends on how to find the successor of a pivot efficiently (Line~\ref{alg1:6}). We mostly use binary search in our implementation. However, when two lists are of similar sizes, linear search can be even faster than binary search~\cite{Ding2011}. In our implementation, if the size ratio of two lists is less than 4 (based on our empirical study), we use linear search to find the successor. In this case, the adaptive algorithm is switched to the sort-merge algorithm. For a fair comparison, we also modified Lucene code to switch between the adaptive algorithm and the sort-merge algorithm if it runs on regular SSDs.
 
 %\textbf{Remark on Lucene's implementation of list intersection and our optimizations}. We find that Lucene's implementation of list intersection is not very efficient. (1) To store several inverted lists, Lucene uses an STL-like data structure (e.g., \texttt{vector< vector<> >}), which adds a layer of indirection. Besides, every memory access involves a boundary checking which also adds some overhead. This also holds in other operations, e.g., union and difference. In our implementation, we use raw byte arrays (i.e., \texttt{char *data}) to store all the lists. All the inverted lists are stored in byte stream continuously in a big memory space, separated by document frequency in the metadata. The entry of a list can be obtained using type-conversion directly. (2) In finding the pivot, Lucene always set it to the \emph{largest} element among the current elements in all lists. Thus, Lucene applies a heap data structure to store the lists based on the current elements of the lists. Thus, every there are many heap adjustment operations (see Line 4 -- 6 in Figure~\ref{fig:doNext}). This introduces a lot of overhead. In our implementation, we set the pivot to the successor (Line~\ref{alg1:10}). In this way, we can remove the overhead of the heap adjustments. Experiments show that, our optimizations can improve the performance by 50\% (Section~\ref{sec:expResults}).
 
 \subsection{Union}\label{sec:union}
-We implement the standard sort-merge based algorithm (also adopted in Lucene) for executing the union operation. Please refer to Algorithm~\ref{alg:mergeUnion}.
-
+We implement the standard sort-merge based algorithm (also adopted in Lucene) for executing the union operation, see Algorithm~\ref{alg:mergeUnion}.
  \begin{algorithm}[htbp]\small
 % \KwIn{$k$ inverted lists $L_1, L_2, \cdots, L_k$ on SSD}
 % \KwOut{$L_1 \cup L_2 \cup \cdots \cup L_k$}
@@ -84,30 +81,28 @@ let $p_i$ be a pointer for every list $L_i$ (initially $p_i \leftarrow 0$)\\
  insert $minID$ to $R$\nllabel{alg2:minID}
  }
  \textbf{return} $R$\\
- \caption{Merge-based union algorithm}\label{alg:mergeUnion}
+ \caption{Sort-merge based union algorithm}\label{alg:mergeUnion}
  \end{algorithm}
-
-%\textbf{Remark on Algorithm~\ref{alg:mergeUnion}}. 
-
-It is interesting to note that Algorithm~\ref{alg:mergeUnion} scans all the elements of the inverted lists \emph{multiple times}. More importantly, for every qualified document ID (Line~\ref{alg2:minID}), it needs $2u$ memory accesses unless some lists finish scanning. That is because every time it needs to compare the $L_i[p_i]$ values (for all $i$) in order to find the minimum value (Line~\ref{alg2:min}). Then, it scans the $L_i[p_i]$ values \emph{again} to move $p_i$ whose $L_i[p_i]$ equals to the minimum (Line~\ref{alg2:move}). Thus, the total number of memory accesses can be estimated by: $2u\cdot |L_1 \cup L_2 \cup \cdots \cup L_u|$. E.g., let $u=2$, $L_1$ = \{10, 20, 30, 40, 50\}, $L_2$ = \{10, 21, 31, 41, 51\}. For the first result 10, we need to compare 4 times (similarly for the rest).
-Thus, the performance depends on the number of lists and the result size. On average, each element in the result set is scanned $2u$ times, and in practice, $|L_1 \cup L_2 \cup \cdots \cup L_u| \approx \sum_i|L_i|$, meaning that approximately, every list has to be accessed $2u$ times.
+%\textbf{Remark on Algorithm~\ref{alg:mergeUnion}}.
+We note that it scans all the elements of the inverted lists \emph{multiple times}. More importantly, for every qualified document ID (Line~\ref{alg2:minID}), it needs $2u$ memory accesses unless some lists finish scanning. That is because every time it needs to compare the $L_i[p_i]$ values (for all $i$) in order to find the minimum value (Line~\ref{alg2:min}). Then, it scans the $L_i[p_i]$ values \emph{again} to move $p_i$ whose $L_i[p_i]$ equals to the minimum value (Line~\ref{alg2:move}). The total number of memory accesses can be estimated by: $2u\cdot |L_1 \cup L_2 \cup \cdots \cup L_u|$. E.g., let $u=2$, $L_1$ = \{10, 20, 30, 40, 50\}, $L_2$ = \{10, 21, 31, 41, 51\}. For the first result 10, we need to compare 4 times (similarly for the rest).
+Thus, the performance depends on the number of lists and the result size. Approximately, element in the result set is scanned $2u$ times, and in practice, $|L_1 \cup L_2 \cup \cdots \cup L_u| \approx \sum_i|L_i|$, meaning that approximately, every list has to be accessed $2u$ times. Section~\ref{sec:expRankedUnion} describes how it affects the system performance.%performance of Smart SSDs.
 
 
 %\textbf{Remark on Lucene's implementation of list union and our optimizations}. Lucene's implementation on union also suffers from inefficiency. (1) As pointed in Section~\ref{sec:intersection}, we removed the STL-like data structure by using raw byte array. (2) In order to find the minimum value among all $L_i[p_i]$, Lucene uses a heap-like data structure based on the current elements. This incurs a lot of overhead of heap adjustments. We removed.
 
 \subsection{Difference}\label{sec:difference}
-The difference operation is applicable for two lists, list \emph{A} and \emph{B}. Then $A-B$ finds all elements in \emph{A} but not in \emph{B}. The algorithm is trivial: for each element $e\in A$, it checks whether $e$ is in $B$. If yes, discard it; otherwise, insert $e$ to the result set. Continue until $A$ is exhausted. This algorithm is also used in Lucene system.
+The difference operation is applicable for two lists, list \emph{A} and \emph{B}. $(A-B)$ finds all elements in \emph{A} but not in \emph{B}. The algorithm is trivial: for each element $e\in A$, it checks whether $e$ is in $B$. If yes, discard it; otherwise, insert $e$ to the result set. Continue until $A$ is exhausted. This algorithm is also used in Lucene.
 
-Our implementation mainly uses a binary search for the element checking. However, if the size ratio between two lists is less than 4, we switch to the linear search (same as Line~\ref{alg1:6} in Algorithm~\ref{alg:AdaptiveIntersection}).
+Our implementation mostly uses binary search for element checking. However, as explained in Section~\ref{sec:intersection}, if the size ratio between two lists is less than 4 (empirically determined), we switch to the linear search (same as Line~\ref{alg1:6} in Algorithm~\ref{alg:AdaptiveIntersection}).
 
 
 %\textbf{Remark on Lucene's implementation of list difference and our optimizations}. Lucene's implementation of list difference is efficient enough, except the STL-like data structures, where we removed.
 
 \subsection{Ranked Operations}\label{sec:ranked}
 
-Those list operations (e.g., intersection) can return many results. However, end users are mostly interested in the most relevant results. This requires two more steps. (1) Similarity computation: for each qualified document $d$ in the result set, compute the similarity (or score) between $q$ and $d$, according to a ranking function; (2) Ranking: find the top ranked documents with the highest scores. The straightforward computation consumes too much CPU resources. We, therefore, need a careful implementation inside Smart SSDs.
+Lucene (and any search engine) returns the most relevant results to users, which requires two steps. (1) Similarity computation: for each qualified document $d$ in the result set, compute the similarity (or score) between $q$ and $d$ according to a ranking function; (2) Ranking: find the top ranked documents with the highest scores. The straightforward computation consumes too much CPU resources. Therefore, we need a careful implementation inside Smart SSDs.
 
-Lucene implements a variant of BM25 query model~\cite{Robertson1994,Singhal01} to determine the similarity between a query and a document.
+We review Lucene's ranking function first. Lucene implements a variant of BM25 ranking model~\cite{Robertson1994,Singhal01} to determine the similarity between a query and a document.
 
 \noindent Let,
 
@@ -120,7 +115,6 @@ $dl:$ & document length\\
 \end{tabular}
 
 \noindent Then,
-
 \begin{displaymath}
   \begin{aligned}
     Similarity(q,d)&=\sum_{t\in q}(Similarity(t,d) \times qtf)\\
@@ -128,8 +122,8 @@ $dl:$ & document length\\
   \end{aligned}
 \end{displaymath}
 
-
 Typically, each entry in the inverted list contains a document frequency (in addition to document ID and positional information).
-Upon a qualified result ID is returned, its score is computed by using the above equations. However, all parameters in $Similarity(t,d)$ are not query-specific, which can be \emph{pre-computed}. In our implementation, instead of storing the actual document frequency (i.e., \emph{df}), we store the score, i.e., $Similarity(t,d)$. This is important to Smart SSDs considering their limited processor speed. Consequently, the similarity computation can be much more efficient. This also means adopting Smart SSDs will not degrade query quality. For a fair comparison, we also modified Lucene codes when it runs on regular SSDs.
+Upon a qualified result ID is returned, its score is computed by using the above equations. However, all parameters in $Similarity(t,d)$ are not query-specific, which can be \emph{pre-computed}. In our implementation, instead of storing the actual document frequency (i.e., \emph{df}), we store the score, i.e., $Similarity(t,d)$. This is important to Smart SSDs considering their limited processor speed. Note that the hardware limitations can be overcome by SSD vendors in the near future. The pre-computation is specific to  Lucene (and any search engine) using the BM25 ranking model\footnote{\small For other ranking models, e.g., probabilistic ranking model~\cite{M08}, we may not pre-compute that much.}.
+For a fair comparison, we also modified Lucene code when it runs on regular SSDs.
 
-The remaining question is how to efficiently find the top ranked results. We maintain the top ranked results explicitly in SRAM, not in DRAM, in a heap-like data structure. Then we scan all the similarities to update the results in SRAM if necessary. 
+The remaining question is how to efficiently find the top ranked results. We maintain the top ranked results in a heap-like data structure stored in SRAM, instead of DRAM. Then we scan all the similarities to update the results in SRAM if necessary. 

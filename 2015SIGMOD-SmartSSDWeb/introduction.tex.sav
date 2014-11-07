@@ -1,0 +1,31 @@
+
+\section{Introduction}
+%\textcolor{red}{Smart SSD for Lucene...just for lucene, no more others!!! We say, Lucene is a commonly used text IR system, and then, we'd like to optimize using Smart SSD..... All techniques can be or cannot be generalized to any IR system}
+%Jianguo: do we need to mention latency-centric application? instead of throughput-centric?
+%Another flow: say search engine is 
+Solid state drives (SSDs) have gained much momentum in the storage market because of the compelling advantages of SSDs over hard disk drives (HDDs). E.g., SSDs are one to two orders of magnitude faster than HDDs in random reads~\cite{AthanassoulisACGS10}. In past years, many research studies discussed how to \emph{make full use} of SSDs in high level software systems (e.g., database systems) instead of just using SSDs as yet-anther-faster HDDs.
+E.g., SSD-aware Btrees~\cite{Li2010TIS}, SSD-aware buffer management~\cite{Do2011TDB}. These pieces of research share the same goal of optimizing software systems, while treating SSDs as storage-\emph{only} devices. In this way, data storage and computing is rigorously \emph{separated}: data is stored on SSDs, while computing is executed at host machines. Upon computation, data is transferred from SSDs to the host machines through host I/O interfaces (typically SAS/SATA or PCIe).
+
+However, recent studies indicate that this computing paradigm of ``\emph{move data closer to code}'' cannot make full use of SSDs for two main reasons~\cite{Do2013QPS,WoodsIA14}. (1) SSDs generally provide higher internal bandwidth than the host I/O interface bandwidth. However, since data must be transferred to the host via the host I/O interface, whose bandwidth can be easily saturated by data-intensive applications, resulting in a waste of SSDs' high internal bandwidth; (2) SSDs, in general, provide high computing capabilities (for executing complex FTL firmware code~\cite{Chung2009SFT}), which are ignored by high level systems where SSDs are treated as storage-\emph{only} devices.
+
+
+Thus, Do et. al proposed an approach of integrating storage and computing inside SSDs, called \emph{Smart SSDs}~\cite{Do2013QPS} or \emph{SSD In-Storage Computing (ISC)}\footnote{\small In this work, we use the term ``Smart SSD'' and ``SSD In-Storage Computing'' interchangeably.}. Smart SSDs allow the execution of application specific code (e.g., database scan and aggregation) inside SSDs, to take advantage of the high internal bandwidth, low I/O latency, and computing power. This ISC approach changed the traditional computing paradigm to ``\emph{move code closer to data}'' (or generally near-data processing~\cite{Balasubramonian14}). In addition to the performance improvement, Smart SSDs significantly reduce energy consumption due to less data movement and its power-efficient processors. As a result, executing application logic inside Smart SSDs is a very promising solution to \emph{make full use} of modern SSDs. It also attractive to industry. E.g., IBM applies Smart SSDs in their Blue Gene storage systems~\cite{Julich13}.
+
+This work explores how to apply Smart SSDs to Apache Lucene\footnote{\small\url{http://lucene.apache.org}} -- a popular open-source search engine system.
+The major research issue is \emph{what query processing steps of Lucene can be cost-effectively offloaded to Smart SSDs}?
+To answer this question, we first identified five commonly used operations in Lucene (and any search engine) that could potentially benefit from Smart SSDs. Then we codesigned their operations (with the collaboration of an SSD vendor X) between the host system and the X-SSD device. The five operations are \textsf{intersection}, \textsf{ranked intersection}, \textsf{ranked union}, \textsf{difference}, and \textsf{ranked difference}.
+Finally, we conducted extensive experiments to evaluate the performance and tradeoffs by using both synthetic datasets and real datasets (provided by a commercial large-scale search engine company). The experimental results show that Smart SSDs reduce the query latency by a factor of 2-3$\times$ and energy consumption by 8-10$\times$ for most of the aforementioned operations.
+
+To the best of our knowledge, this is the first work to explore SSD in-storage computing in search engine area.
+
+%To the best of our knowledge, this is the first work to explore SSD in-storage computing to search engine area. With the advent of SSDs, the boundary between software systems (i.e., Lucene in our case) and SSD storage devices is getting blurrier ~\cite{Steve12}. Thus, to fully utilize the advantages of SSD to search engine, this work shows that it is beneficial to consider a system co-design approach between search engine and SSD. In this way, computing power and storage are tightly integrated to improve the overall performance.
+
+The rest of this paper is organized as follows.
+Section~\ref{sec:background} provides an overview of SSD internal architecture, and Lucene's search architecture.
+Section~\ref{sec:ssdArch} describes how our Smart SSD works.
+Section~\ref{sec:design} presents the integrated system design space and architecture of the Smart SSD and Lucene.
+Section~\ref{sec:implementation} details the implementation of query offloading.
+Section~\ref{sec:expSetup} and Section~\ref{sec:expResults} show the evaluation, and discuss the tradeoffs of the query offloading.
+Section~\ref{sec:relatedWork} discusses some related studies of this work.
+Section~\ref{sec:conclusion} concludes our work.
+

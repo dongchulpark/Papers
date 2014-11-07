@@ -1,20 +1,33 @@
+
 \section{Conclusion}\label{sec:conclusion}
 %summary, be conclusive
 SSD In-Storage Computing (Smart SSD) is a new computing paradigm to make full use of SSD capabilities.
-This work introduces Smart SSDs to search engine area. With the close collaboration with an SSD vendor, we co-designed the Smart SSD with a popular open-source search engine, Apache Lucene.
-The main challenge is to determine what query processing logic in the host Lucene system can be cost-effectively offloaded to Smart SSDs. 
-We demonstrates that (1) The intersection operation (both non-ranked and ranked version) can be cost-effectively offloaded to Smart SSDs, in particular, when the number of lists is large, the lists are long, the list sizes are skewed, and the intersection ratio is low; (2) The difference operation $(A-B)$, both non-ranked and ranked, can be a good candidate for offloading only if $|A| \le |B|$, and Smart SSDs favor lists with lower intersection ratio; (3) The union operation (both non-ranked and ranked) causes a heavy memory access. Thus, it is not beneficial to offload the union operation.
-
+This work introduces Smart SSDs to search engine area. With the close collaboration with an SSD vendor, we co-design the Smart SSD with a popular open-source search engine -- Apache Lucene.
+The main challenge is to determine what query processing operations in the host Lucene system can be cost-effectively offloaded to Smart SSDs.
+We demonstrate that: (1) The intersection operation (both non-ranked and ranked version) can be cost-effectively offloaded to Smart SSDs, in particular, when the number of lists is large, the lists are long, the list sizes are skewed, and the intersection ratio is low; (2) The difference operation $A-B$ (both non-ranked and ranked) can be a good candidate for offloading only if $|A| \le |B|$, and Smart SSDs favor lists with a high intersection ratio; (3) The union operation (both non-ranked and ranked) causes a heavy memory access. Thus, it is not beneficial to offload to Smart SSDs. Except for the union operation, Smart SSDs can reduce the query latency by 2-3$\times$ and energy consumption by 6-10$\times$ on the real dataset.
 
 %what did we learn, what can other people learn from our work. more projections on what will change next, and how will these changes affect our system
-We also observe that the boundary between the CPU time and I/O time is getting blurrier for the query processing (e.g., intersection) inside Smart SSDs. The CPU time (including DRAM access time) can be comparable to or even higher than the I/O time (please see Figure~\ref{fig:timeBreakDownSmartSSD}). This inspires both SSD vendors and system designers to improve Smart SSD. 
-SSD vendors can improve hardware performance such as processor speed and memory access speed. On the other hand, system designers are in charge of developing efficient algorithms by considering Smart SSDs characteristics (e.g., minimize expensive memory accesses).
+We also observe that the boundary between the CPU time and I/O time is getting blurrier for the query processing (e.g., intersection) inside Smart SSDs. The CPU time (including DRAM access time) can be comparable to or even higher than the I/O time (see Figure~\ref{fig:timeBreakDownSmartSSD}). This inspires both SSD vendors and system designers.
+SSD vendors can improve hardware performance such as processor speed and memory access speed by introducing more power processors and caches. On the other hand, system designers can develop efficient algorithms by considering the special characteristics of Smart SSDs (e.g., minimize expensive memory accesses).
+
+
+%what's next
+%This is the first work on applying Smart SSDs to search engine area. We have a number of interesting future work in mind.
+%(1) Executing list operations on \emph{compressed} lists. Compressed lists take less space so that they can save the I/O time. However, decompression inside Smart SSDs takes more CPU time than host systems. Thus, balancing of the I/O time and CPU time is a critical issue. (2) Optimization techniques to implement the top-$k$ ranking. We can algorithmically combine step S4 and S5. Consequently, we can cost-effectively offload the ranked union operation. (3) Offloading other functions of Lucene, e.g., build inverted index.
+
+ %We can build inverted index with Smart SSDs. This can benefit a lot from Smart SSDs not only just because it is a very I/O-intensive task, but also it does not require heavy CPU computation.
 
 
 %what's next
 \textbf{Future work.}
-This is the first work on applying Smart SSDs to search engine area. We have a number of interesting future work in mind.
-(1) Executing list operations with \emph{compressed} lists. Compressed lists take less space so that they can save the I/O time. However, decompression inside Smart SSDs takes more CPU time than host systems. Thus, balancing of the I/O time and CPU time is critical issue. (2) Optimization techniques to implement the top-$k$ ranking. We can algorithmically combine step S4 and S5. Consequently, we can cost-effectively offload the ranked union operation. (3) Offloading other functions of Lucene. We can build inverted index with Smart SSDs. This can benefit a lot from Smart SSDs not only just because it is a very I/O-intensive task, but also it does not require heavy CPU computation.
+%This is the first work on applying Smart SSDs to search engine area.
+We have a number of interesting future work in mind.
+(1) Executing list operations on \emph{compressed} lists. Compressed lists take less space so that they can save the I/O time. However, decompression inside Smart SSDs takes more CPU time than host systems. Thus, balancing of the I/O time and CPU time is a critical issue. (2) Optimization techniques to implement the top-$k$ ranking. We can algorithmically combine steps S4 and S5. Consequently, we can cost-effectively offload the ranked union operation. (3) Offloading other functions of Lucene. Building inverted index may benefit from Smart SSDs not only because it is a very I/O-intensive task, but also it does not require heavy CPU computation.
+
+
+%We can build inverted index with Smart SSDs. This can benefit a lot from Smart SSDs not only just because it is a very I/O-intensive task, but also it does not require heavy CPU computation.
+
+
 %There are a lot of data transfer, at least twice: scan the whole documents once, build index in memory, write back to SSD. And if the memory is not big enough, some intermediate results have to be swapped to SSDs. However, it could save a lot of host I/O interface bandwidth if we run the process inside Smart SSD, to leverage the high internal bandwidth and low latency I/O. On the other hand, it does not require much CPU computation, which is also suitable for Smart SSD.
 
 

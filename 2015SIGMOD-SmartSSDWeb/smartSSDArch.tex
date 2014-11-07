@@ -12,12 +12,12 @@ Smart SSDs, unlike the traditional CPU-centric computing systems, enable ISC dev
 \begin{figure}[htbp]
 %\vspace{-5mm}
 	\centering
-		\includegraphics[width=1\columnwidth]{figures/SmartSSD_Architecture.pdf}
+		\includegraphics[width=0.9\columnwidth]{figures/SmartSSD_Architecture.pdf}
 	\caption{\small Smart SSD Architecture}
 	\label{fig:SmartSSD_arch}
 \end{figure}
 
-As illustrated in Figure~\ref{fig:SmartSSD_arch}, Smart SSD consists of several key software components and it communicates with a Smart SSD host program via Smart SSD application programming models (APIs).
+As illustrated in Figure~\ref{fig:SmartSSD_arch}, our Smart SSD consists of several key software components and it communicates with a Smart SSD host program via Smart SSD application programming models (APIs).
 
 
 An SSDlet is a Smart SSD program in an ISC device. It implements application logic and responds to a Smart SSD host program. The SSDlet is executed in an event-driven manner by the Smart SSD runtime system. A Smart SSD runtime system connects the device Smart SSD program with a base device firmware, and implements the library of Smart SSD APIs. In addition, a base device firmware also implements normal I/O operations (read and write) of a storage device.

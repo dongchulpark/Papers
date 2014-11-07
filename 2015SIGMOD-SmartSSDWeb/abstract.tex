@@ -1,6 +1,6 @@
 
 \begin{abstract}
-Recently, there is a renewed interest of \emph{In-Storage Computing} (ISC) in the context of solid state drives (SSDs), called ``Smart SSDs''. Unlike the traditional CPU-centric computing systems, ISC devices play a major role in computation by offloading key functions of host systems into the ISC devices, to take advantage of the high internal bandwidth, low I/O latency and computing capabilities.
+Recently, there has been a renewed interest of \emph{In-Storage Computing} (ISC) in the context of solid state drives (SSDs), called ``Smart SSDs''. Unlike the traditional CPU-centric computing systems, ISC devices play a major role in computation by offloading key functions of host systems into the ISC devices to take advantage of the high internal bandwidth, low I/O latency and high computing capabilities.
 It is challenging to determine what functions should be executed in the ISC devices.
 
 %This work explores how to apply Smart SSDs to the operations used by web search engines.
@@ -10,7 +10,15 @@ It is challenging to determine what functions should be executed in the ISC devi
 
 
 This work explores how to apply Smart SSDs to Apache Lucene (a popular open-source search engine).
-The major research issue is to determine which query processing steps of Lucene can be cost-effectively offloaded to Smart SSDs.
-To answer this question, we identified five commonly used operations in Lucene (and any search engine) that could potentially benefit from Smart SSDs and we codesigned their operation (with the collaboration of an SSD vendor X) between the host system and the X-SSD device. The five operations are \textsf{intersection}, \textsf{ranked intersection}, \textsf{ranked union}, \textsf{difference}, and \textsf{ranked difference}.
-Finally, we conducted extensive experiments to evaluate the performance and tradeoffs by using both synthetic datasets and real datasets (provided by a commercial large-scale search engine company). The experimental results show that, for some operations, Smart SSDs can reduce the query latency by a factor of 2-3$\times$ and energy consumption by 8-10$\times$.
-\end{abstract} 
+The major research issue is to determine what query processing operations of Lucene can be cost-effectively offloaded to Smart SSDs.
+To answer this question, we carefully identified five commonly used operations in Lucene (and any search engine) that could potentially benefit from Smart SSDs: \textsf{intersection}, \textsf{ranked intersection}, \textsf{ranked union}, \textsf{difference}, and \textsf{ranked difference}.
+%We codesigned their operations (with the collaboration of an SSD vendor X) between the host system and the X-SSD device.
+%They are \textsf{intersection}, \textsf{ranked intersection}, \textsf{ranked union}, \textsf{difference}, and \textsf{ranked difference}.
+With the close collaboration of an SSD vendor, we co-designed the host Lucene system and the Smart SSD by offloading the key operations to the Smart SSD.
+Finally, we conducted extensive experiments to evaluate the system performance and tradeoffs by using both synthetic datasets and real datasets (provided by a commercial large-scale search engine company).
+The experimental results show that Smart SSDs significantly reduce the query latency by a factor of 2-3$\times$ and energy consumption by 6-10$\times$ for most of the aforementioned operations.
+\end{abstract}
+
+\category{H.3.3}{Information Search and Retrieval}{Search Process}
+\terms{Design, Performance, Experimentation}
+\keywords{In-Storage Computing, Smart SSD, Search Engine, Lucene, System Co-Design}
